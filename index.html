@@ -208,13 +208,67 @@
         </div>
     </div>
 
+    <!-- ========== SEÇÃO DOS BARBEIROS ========== -->
+    <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Nossos Barbeiros</h2>
+        
+        <!-- Grid responsivo para os cards dos barbeiros -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- ========== BARBEIRO ALEX ========== -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer transform hover:scale-105"
+                 onclick="selecionarBarbeiro('Alex')">
+                
+                <!-- Foto do barbeiro -->
+                <div class="h-64 overflow-hidden">
+                    <img src="alexx.jpeg" 
+                         alt="Barbeiro Alex" 
+                         class="w-full h-full object-contain object-center">
+                </div>
+                
+                <!-- Informações do barbeiro -->
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-4 text-center">Alex</h3>
+                    
+                    <!-- Botão de seleção -->
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Selecionar Alex
+                    </button>
+                </div>
+            </div>
+
+            <!-- ========== BARBEIRO WANDERLEI ========== -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer transform hover:scale-105"
+                 onclick="selecionarBarbeiro('Wanderlei')">
+                
+                <!-- Foto do barbeiro -->
+                <div class="h-64 overflow-hidden">
+                    <img src="wanderleii.jpeg" 
+                         alt="Barbeiro Wanderlei" 
+                         class="w-full h-full object-contain object-center">
+                </div>
+                
+                <!-- Informações do barbeiro -->
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-4 text-center">Wanderlei</h3>
+                    
+                    <!-- Botão de seleção -->
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Selecionar Wanderlei
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- ========== SEÇÃO DE SERVIÇOS ========== -->
-    <section id="servicos" class="py-16 bg-white">
+    <section id="servicos" class="py-16 bg-gray-100">
     <!-- 
     - section: elemento semântico HTML5 para seções de conteúdo
     - id="servicos": identificador único para navegação e links âncora
     - py-16: padding vertical de 16 unidades (espaçamento interno grande)
-    - bg-white: fundo branco
+    - bg-gray-100: fundo cinza claro
     -->
     
         <!-- Container principal da seção -->
@@ -486,7 +540,7 @@
                 <!-- Serviço 12 -->
                 <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
                     <div class="h-48 overflow-hidden">
-                        <img src="corte+barba.jpeg" alt="Homem recebendo corte de cabelo e barba" class="w-full h-full object-contain object-center">
+                        <img src="corte+barba.jpeg" alt="Homem recebendo corte e barba" class="w-full h-full object-contain object-center">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Corte + Barba</h3>
@@ -528,68 +582,6 @@
                         <div class="flex justify-between items-center">
                             <span class="text-gray-500 font-bold text-lg">R$ 80,00</span>
                             <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Pacote Completo - R$80')">Agendar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SEÇÃO DOS BARBEIROS ========== -->
-    <section class="py-16 bg-gray-100">
-    <!-- Seção com fundo cinza claro para alternar com a seção anterior (branca) -->
-    
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Nossos Barbeiros</h2>
-            
-            <!-- Grid responsivo para os cards dos barbeiros -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <!-- Nota: lg:grid-cols-2 mantém 2 colunas mesmo em telas grandes (só 2 barbeiros) -->
-            
-                <!-- ========== BARBEIRO ALEX ========== -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <!-- shadow-md: sombra média (menor que nos serviços) -->
-                
-                    <!-- Foto do barbeiro -->
-                    <div class="h-64 overflow-hidden">
-                    <!-- h-64: altura maior que os serviços para mostrar melhor a pessoa -->
-                    
-                        <img src="alexx.jpeg" 
-                             alt="Barbeiro Alex, especialista em cortes modernos e barba completa" 
-                             class="w-full h-full object-contain object-center">
-                            
-                    </div>
-                    
-                    <!-- Informações do barbeiro -->
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold">Alex</h3>
-                      
-                        <!-- Tags de especialidades -->
-                        <div class="flex flex-wrap gap-2">
-                        <!-- 
-                        - flex-wrap: permite que itens quebrem linha se necessário
-                        - gap-2: espaçamento pequeno entre as tags
-                        -->
-                        
-                            <span class=" px-3 py-1 rounded-full text-sm"></span>
-                            <span class=" px-3 py-1 rounded-full text-sm"></span>
-                            <span class=" px-3 py-1 rounded-full text-sm"></span>
-                            <!-- 
-                            - rounded-full: bordas totalmente arredondadas (formato de pílula)
-                            - text-sm: texto pequeno
-                            -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Barbeiro Wanderlei -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="h-64 overflow-hidden">
-                        <img src="wanderleii.jpeg" alt="Barbeiro Wanderlei" class="w-full h-full object-contain object-center">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold">Wanderlei</h3>
-                        
                         </div>
                     </div>
                 </div>
@@ -842,91 +834,64 @@
         </div>
     </footer>
 
+    <!-- ========== BOTÃO VOLTAR AO TOPO ========== -->
+    <!-- Botão flutuante que aparece quando o usuário faz scroll para baixo -->
+    <button id="voltarTopo" 
+            class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible z-50"
+            onclick="voltarAoTopo()"
+            title="Voltar ao topo">
+        <!-- Ícone de seta para cima usando caracteres Unicode -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
     <script>
-        // ========== INFORMAÇÕES IMPORTANTES DE SEGURANÇA ==========
-        // ⚠️ ATENÇÃO: Este é um site estático (HTML/CSS/JS apenas)
-        // A senha do administrador está ofuscada em Base64, mas ainda é visível
-        // no código fonte para quem souber inspecionar. Isso é uma limitação
-        // de hospedagens estáticas como GitHub Pages.
-        // 
-        // Para segurança REAL, seria necessário:
-        // - Backend com banco de dados
-        // - Autenticação com sessões seguras
-        // - Criptografia de senhas com hash + salt
-        // 
-        // A ofuscação atual serve apenas para dificultar acesso casual,
-        // não oferece proteção contra usuários técnicos.
-        
-        // ========== CONFIGURAÇÃO DO EMAILJS ==========
-        // ATENÇÃO: Você precisa configurar estas informações no site emailjs.com
-        // 1. Crie uma conta gratuita em: https://www.emailjs.com/
-        // 2. Configure um serviço de email (Gmail, Outlook, etc.)
-        // 3. Crie um template de email
-        // 4. Substitua os valores abaixo pelos seus dados reais
-        
         const EMAILJS_CONFIG = {
-            serviceID: 'SEU_SERVICE_ID_AQUI',     // Ex: 'service_abc123'
-            templateID: 'SEU_TEMPLATE_ID_AQUI',   // Ex: 'template_xyz789'
-            publicKey: 'SUA_PUBLIC_KEY_AQUI'      // Ex: 'user_123abc456def'
+            serviceID: 'SEU_SERVICE_ID_AQUI',
+            templateID: 'SEU_TEMPLATE_ID_AQUI',
+            publicKey: 'SUA_PUBLIC_KEY_AQUI'
         };
         
-        // Inicializa o EmailJS com sua chave pública
         emailjs.init(EMAILJS_CONFIG.publicKey);
 
-        // ========== SEÇÃO 1: CONFIGURAÇÃO INICIAL DA PÁGINA ==========
-        // Esta seção executa quando a página carrega completamente
-        
         document.addEventListener('DOMContentLoaded', function() {
-            // ========== CONFIGURAÇÃO DO CAMPO DE DATA ==========
-            // Define a data mínima como hoje para impedir agendamentos em datas passadas
+            const hoje = new Date();
+            const dataFormatada = hoje.toISOString().split('T')[0];
+            document.getElementById('data').min = dataFormatada;
             
-            const hoje = new Date();                    // Pega a data atual
-            const dataFormatada = hoje.toISOString().split('T')[0];  // Converte para formato YYYY-MM-DD
-            document.getElementById('data').min = dataFormatada;     // Define data mínima no campo
+            const botaoTopo = document.getElementById('voltarTopo');
             
-            // EXPLICAÇÃO TÉCNICA:
-            // - new Date(): cria objeto com data/hora atual
-            // - toISOString(): converte para formato ISO (2025-01-08T14:30:00.000Z)
-            // - split('T')[0]: pega apenas a parte da data (2025-01-08)
-            // - .min: atributo HTML que define valor mínimo permitido
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    botaoTopo.classList.remove('opacity-0', 'invisible');
+                    botaoTopo.classList.add('opacity-100', 'visible');
+                } else {
+                    botaoTopo.classList.remove('opacity-100', 'visible');
+                    botaoTopo.classList.add('opacity-0', 'invisible');
+                }
+            });
             
-            // ========== CONFIGURAÇÃO DOS HORÁRIOS POR BARBEIRO ==========
-            // Adiciona eventos para atualizar horários quando barbeiro ou data mudar
+            // Adiciona eventos para os campos
             document.getElementById('barbeiro').addEventListener('change', atualizarHorarios);
             document.getElementById('data').addEventListener('change', atualizarHorarios);
+            document.getElementById('servico').addEventListener('change', atualizarHorarios);
             
-            // Carrega horários iniciais
+            limparAgendamentosAntigos();
+            verificarSenhaAdmin();
             atualizarHorarios();
         });
-
-        // ========== SISTEMA DE CONTROLE DE AGENDAMENTOS ==========
-        // Estas funções gerenciam os horários já ocupados usando localStorage
         
-        function salvarAgendamento(data, horario, barbeiro, nomeCliente) {
-            // Recupera agendamentos existentes do localStorage
-            let agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
-            
-            // Cria o novo agendamento
-            const novoAgendamento = {
-                data: data,
-                horario: horario,
-                barbeiro: barbeiro,
-                cliente: nomeCliente,
-                timestamp: new Date().getTime() // Para possível limpeza futura
-            };
-            
-            // Adiciona à lista
-            agendamentos.push(novoAgendamento);
-            
-            // Salva de volta no localStorage
-            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentos));
+        function voltarAoTopo() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
-        
+
         function verificarHorarioOcupado(data, horario, barbeiro) {
-            // Recupera agendamentos do localStorage
             const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
             
-            // Verifica se existe agendamento para esta data, horário e barbeiro
             return agendamentos.some(agendamento => 
                 agendamento.data === data && 
                 agendamento.horario === horario && 
@@ -934,8 +899,417 @@
             );
         }
         
+        function servicoOcupaDoisHorarios(servico) {
+            const servicosDuplos = [
+                'Alisante (Graxa) - R$30,00',
+                'Corte + Alisante - R$55,00',
+                'Corte + Barba - R$55,00',
+                'Corte + Barba + Sobrancelha - R$60,00',
+                'Pacote Completo - R$80,00'
+            ];
+            
+            return servicosDuplos.some(servicoDuplo => servico.includes(servicoDuplo.split(' - ')[0]));
+        }
+        
+        function obterProximoHorario(horarioAtual, horariosDisponiveis) {
+            const indiceAtual = horariosDisponiveis.indexOf(horarioAtual);
+            if (indiceAtual >= 0 && indiceAtual < horariosDisponiveis.length - 1) {
+                return horariosDisponiveis[indiceAtual + 1];
+            }
+            return null;
+        }
+        
+        function verificarDoisHorariosLivres(data, horario, barbeiro, horariosDisponiveis) {
+            const proximoHorario = obterProximoHorario(horario, horariosDisponiveis);
+            
+            if (!proximoHorario) {
+                return false;
+            }
+            
+            const primeiroOcupado = verificarHorarioOcupado(data, horario, barbeiro);
+            const segundoOcupado = verificarHorarioOcupado(data, proximoHorario, barbeiro);
+            
+            return !primeiroOcupado && !segundoOcupado;
+        }
+
+        function salvarAgendamento(data, horario, barbeiro, nomeCliente, servico) {
+            let agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            
+            const novoAgendamento = {
+                data: data,
+                horario: horario,
+                barbeiro: barbeiro,
+                cliente: nomeCliente,
+                servico: servico,
+                timestamp: new Date().getTime()
+            };
+            
+            agendamentos.push(novoAgendamento);
+            
+            if (servicoOcupaDoisHorarios(servico)) {
+                const horariosDisponiveis = obterHorariosParaBarbeiro(barbeiro, data);
+                const proximoHorario = obterProximoHorario(horario, horariosDisponiveis);
+                
+                if (proximoHorario) {
+                    const segundoAgendamento = {
+                        data: data,
+                        horario: proximoHorario,
+                        barbeiro: barbeiro,
+                        cliente: `${nomeCliente} (2ª parte)`,
+                        servico: `${servico} (continuação)`,
+                        timestamp: new Date().getTime()
+                    };
+                    agendamentos.push(segundoAgendamento);
+                }
+            }
+            
+            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentos));
+        }
+
+        function obterHorariosParaBarbeiro(barbeiro, data) {
+            const dataSelecionadaObj = new Date(data + 'T00:00:00');
+            const diaSemana = dataSelecionadaObj.getDay();
+            
+            if (barbeiro === 'Alex') {
+                if (diaSemana === 0) {
+                    return [];
+                } else if (diaSemana >= 1 && diaSemana <= 5) {
+                    return [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", 
+                        "12:00", "12:30", "13:00",
+                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", 
+                        "18:00", "18:30", "19:00", "19:30"
+                    ];
+                } else if (diaSemana === 6) {
+                    return [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", 
+                        "12:00", "12:30", "13:00",
+                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", 
+                        "18:00", "18:30"
+                    ];
+                }
+            } else if (barbeiro === 'Wanderlei') {
+                if (diaSemana === 1) {
+                    return [];
+                } else if (diaSemana >= 2 && diaSemana <= 5) {
+                    return [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", 
+                        "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30"
+                    ];
+                } else if (diaSemana === 6) {
+                    return [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", 
+                        "16:30", "17:00", "17:30", "18:00", "18:30"
+                    ];
+                } else if (diaSemana === 0) {
+                    return [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "12:00", "12:30", "13:00", "13:30", "14:00"
+                    ];
+                }
+            }
+            return [];
+        }
+
+        function atualizarHorarios() {
+            const barbeiroSelecionado = document.getElementById('barbeiro').value;
+            const dataSelecionada = document.getElementById('data').value;
+            const servicoSelecionado = document.getElementById('servico').value;
+            const selectHorario = document.getElementById('horario');
+            
+            selectHorario.innerHTML = '<option value="">Selecione</option>';
+            
+            if (!dataSelecionada) {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = "Selecione uma data primeiro";
+                option.disabled = true;
+                selectHorario.appendChild(option);
+                return;
+            }
+            
+            if (!barbeiroSelecionado) {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = "Selecione um barbeiro primeiro";
+                option.disabled = true;
+                selectHorario.appendChild(option);
+                return;
+            }
+            
+            const horariosDisponiveis = obterHorariosParaBarbeiro(barbeiroSelecionado, dataSelecionada);
+            
+            if (horariosDisponiveis.length === 0) {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = barbeiroSelecionado === 'Alex' ? "Alex não trabalha aos domingos" : "Wanderlei não trabalha às segundas";
+                option.disabled = true;
+                selectHorario.appendChild(option);
+                return;
+            }
+            
+            const ocupaDoisHorarios = servicoOcupaDoisHorarios(servicoSelecionado);
+            let horariosLivres = 0;
+            
+            horariosDisponiveis.forEach(horario => {
+                const option = document.createElement('option');
+                option.value = horario;
+                
+                if (ocupaDoisHorarios) {
+                    const horarioDisponivel = verificarDoisHorariosLivres(dataSelecionada, horario, barbeiroSelecionado, horariosDisponiveis);
+                    
+                    if (horarioDisponivel) {
+                        const proximoHorario = obterProximoHorario(horario, horariosDisponiveis);
+                        option.textContent = `${horario} - ${proximoHorario} (2 horários)`;
+                        horariosLivres++;
+                    } else {
+                        option.textContent = `${horario} - INDISPONÍVEL (2 horários necessários)`;
+                        option.disabled = true;
+                        option.style.color = '#999';
+                        option.style.fontStyle = 'italic';
+                    }
+                } else {
+                    const horarioOcupado = verificarHorarioOcupado(dataSelecionada, horario, barbeiroSelecionado);
+                    
+                    if (horarioOcupado) {
+                        option.textContent = `${horario} - OCUPADO`;
+                        option.disabled = true;
+                        option.style.color = '#999';
+                        option.style.fontStyle = 'italic';
+                    } else {
+                        option.textContent = horario;
+                        horariosLivres++;
+                    }
+                }
+                
+                selectHorario.appendChild(option);
+            });
+    
+            if (horariosLivres === 0) {
+                const optionInfo = document.createElement('option');
+                optionInfo.value = "";
+                optionInfo.textContent = ocupaDoisHorarios ? 
+                    "Nenhum horário consecutivo disponível" : 
+                    "Todos os horários estão ocupados";
+                optionInfo.disabled = true;
+                optionInfo.style.color = '#d32f2f';
+                optionInfo.style.fontWeight = 'bold';
+                selectHorario.appendChild(optionInfo);
+            }
+        }
+
+        function selecionarBarbeiro(nomeBarbeiro) {
+            const barbeiroSelect = document.getElementById('barbeiro');
+            barbeiroSelect.value = nomeBarbeiro;
+            
+            atualizarHorarios();
+            
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-xl z-50 transform translate-x-full transition-all duration-500 ease-in-out';
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                        <div class="font-bold">${nomeBarbeiro} selecionado!</div>
+                        <div class="text-sm opacity-90">Agora escolha um serviço</div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+                notification.classList.add('translate-x-0');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-0');
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 500);
+            }, 3000);
+            
+            setTimeout(() => {
+                document.getElementById('servicos').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 800);
+        }
+
+        function prefillService(servico) {
+            const servicoSelect = document.getElementById('servico');
+            
+            for (let i = 0; i < servicoSelect.options.length; i++) {
+                if (servicoSelect.options[i].text.startsWith(servico)) {
+                    servicoSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            
+            atualizarHorarios();
+            
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-4 rounded-lg shadow-xl z-50 transform translate-x-full transition-all duration-500 ease-in-out';
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                        <div class="font-bold">Serviço selecionado!</div>
+                        <div class="text-sm opacity-90">Complete o agendamento abaixo</div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+                notification.classList.add('translate-x-0');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-0');
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 500);
+            }, 3000);
+            
+            setTimeout(() => {
+                document.getElementById('agendamento').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 800);
+        }
+
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const data = document.getElementById('data').value;
+            const horario = document.getElementById('horario').value;
+            const servico = document.getElementById('servico').value;
+            const barbeiro = document.getElementById('barbeiro').value;
+            
+            const dataValidacao = document.getElementById('data').value;
+            const barbeiroValidacao = document.getElementById('barbeiro').value;
+            const horarioValidacao = document.getElementById('horario').value;
+            
+            if (dataValidacao && barbeiroValidacao) {
+                const dataSelecionadaObj = new Date(dataValidacao + 'T00:00:00');
+                const diaSemana = dataSelecionadaObj.getDay();
+                
+                if (barbeiroValidacao === 'Alex' && diaSemana === 0) {
+                    alert('Alex não trabalha aos domingos. Escolha outro dia ou barbeiro.');
+                    return;
+                }
+                
+                if (barbeiroValidacao === 'Wanderlei' && diaSemana === 1) {
+                    alert('Wanderlei não trabalha às segundas. Escolha outro dia ou barbeiro.');
+                    return;
+                }
+            }
+            
+            if (!horarioValidacao) {
+                alert('Selecione um horário válido.');
+                return;
+            }
+            
+            if (servicoOcupaDoisHorarios(servico)) {
+                const horariosDisponiveis = obterHorariosParaBarbeiro(barbeiro, data);
+                if (!verificarDoisHorariosLivres(data, horario, barbeiro, horariosDisponiveis)) {
+                    alert('Este horário não está mais disponível para serviços de 2 horários. Escolha outro horário.');
+                    atualizarHorarios();
+                    return;
+                }
+            } else {
+                if (verificarHorarioOcupado(data, horario, barbeiro)) {
+                    alert('Este horário acabou de ser ocupado. Escolha outro horário.');
+                    atualizarHorarios();
+                    return;
+                }
+            }
+            
+            salvarAgendamento(data, horario, barbeiro, nome, servico);
+            
+            const ownerPhone = '5561998651796';
+            
+            let mensagem = `NOVO AGENDAMENTO WF BARBEARIA\n\n` +
+                 `Cliente: ${nome}\n` +
+                 `Telefone: ${telefone}\n` +
+                 `Data: ${formatDate(data)}\n` +
+                 `Horário: ${horario}`;
+    
+            if (servicoOcupaDoisHorarios(servico)) {
+                const horariosDisponiveis = obterHorariosParaBarbeiro(barbeiro, data);
+                const proximoHorario = obterProximoHorario(horario, horariosDisponiveis);
+                mensagem += ` - ${proximoHorario} (2 horários)`;
+            }
+    
+            mensagem += `\n` +
+                 `Serviço: ${servico}\n` +
+                 `Barbeiro: ${barbeiro || 'Qualquer um'}\n\n` +
+                 `CONFIRME O HORÁRIO DISPONÍVEL`;
+            
+            const linkWhatsApp = `https://wa.me/${ownerPhone}?text=${encodeURIComponent(mensagem)}`;
+            
+            if (window.navigator.userAgent.includes('Mobile')) {
+                window.location.href = linkWhatsApp;
+            } else {
+                const novaAba = window.open(linkWhatsApp, '_blank');
+                
+                if (!novaAba || novaAba.closed || typeof novaAba.closed == 'undefined') {
+                    window.location.href = linkWhatsApp;
+                }
+            }
+            
+            let alertMensagem = `Agendamento realizado com sucesso!\n\nData: ${formatDate(data)}\nHorário: ${horario}`;
+            
+            if (servicoOcupaDoisHorarios(servico)) {
+                const horariosDisponiveis = obterHorariosParaBarbeiro(barbeiro, data);
+                const proximoHorario = obterProximoHorario(horario, horariosDisponiveis);
+                alertMensagem += ` - ${proximoHorario} (2 horários)`;
+            }
+            
+            alertMensagem += `\nBarbeiro: ${barbeiro || 'Qualquer um'}`;
+            
+            alert(alertMensagem);
+            
+            document.getElementById('agendamentoForm').reset();
+            
+            const hoje = new Date();
+            const dataFormatada = hoje.toISOString().split('T')[0];
+            document.getElementById('data').min = dataFormatada;
+            
+            atualizarHorarios();
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('pt-BR');
+        }
+
         function limparAgendamentosAntigos() {
-            // Remove agendamentos de mais de 30 dias (opcional)
             const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
             const trintaDiasAtras = new Date().getTime() - (30 * 24 * 60 * 60 * 1000);
             
@@ -945,84 +1319,31 @@
             
             localStorage.setItem('agendamentosWF', JSON.stringify(agendamentosLimpos));
         }
-        
-        function limparTodosAgendamentos() {
-            // Função administrativa para limpar todos os agendamentos
-            if (confirm('⚠️ ATENÇÃO!\n\nEsta ação irá remover TODOS os agendamentos salvos.\n\nDeseja realmente continuar?\n\n(Esta função é apenas para administradores)')) {
-                localStorage.removeItem('agendamentosWF');
-                alert('✅ Todos os agendamentos foram removidos com sucesso!');
-                atualizarHorarios(); // Atualiza a exibição dos horários
+
+        function verificarSenhaAdmin() {
+            const senhaOfuscadaPadrao = 'V0ZCYXJiZXIyMDI1IQ==';
+            const senhaOfuscadaAtual = 'V0ZCYXJiZXIyMDI1IQ==';
+            
+            if (senhaOfuscadaAtual === senhaOfuscadaPadrao) {
+                console.warn('AVISO: Senha padrão em uso!');
             }
         }
-        
-        function contarAgendamentos() {
-            // Função para contar total de agendamentos salvos
-            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
-            return agendamentos.length;
-        }
-        
-        function mostrarEstatisticas() {
-            // Função administrativa para mostrar estatísticas de agendamentos
-            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
-            const total = agendamentos.length;
+
+        function menuAdmin() {
+            const senhaAdmin = prompt('Digite a senha de administrador:');
+            const senhaOfuscada = 'V0ZCYXJiZXIyMDI1IQ==';
+            const senhaCorreta = atob(senhaOfuscada);
             
-            if (total === 0) {
-                alert('📊 ESTATÍSTICAS\n\nNenhum agendamento registrado no momento.');
+            if (senhaAdmin !== senhaCorreta) {
+                if (senhaAdmin !== null) {
+                    alert('Senha incorreta!');
+                }
                 return;
             }
             
-            // Conta agendamentos por barbeiro
-            const porBarbeiro = {};
-            agendamentos.forEach(agendamento => {
-                porBarbeiro[agendamento.barbeiro] = (porBarbeiro[agendamento.barbeiro] || 0) + 1;
-            });
+            alert('Acesso autorizado!');
             
-            let mensagem = `📊 ESTATÍSTICAS DE AGENDAMENTOS\n\n`;
-            mensagem += `Total de agendamentos: ${total}\n\n`;
-            mensagem += `Por barbeiro:\n`;
-            
-            Object.keys(porBarbeiro).forEach(barbeiro => {
-                mensagem += `• ${barbeiro}: ${porBarbeiro[barbeiro]} agendamentos\n`;
-            });
-            
-            alert(mensagem);
-        }
-        
-        function menuAdmin() {
-            // ========== AUTENTICAÇÃO ADMINISTRATIVA ==========
-            // Solicita senha de administrador antes de acessar o menu
-            const senhaAdmin = prompt('🔐 ACESSO RESTRITO\n\nDigite a senha de administrador:');
-            
-            // ========== SENHA OFUSCADA PARA MAIOR SEGURANÇA ==========
-            // Senha codificada em Base64 para dificultar acesso casual
-            // 
-            // 🔐 COMO TROCAR A SENHA:
-            // 1. Acesse: https://www.base64encode.org/
-            // 2. Digite sua nova senha (ex: MinhaNovaSenh@123)
-            // 3. Copie o resultado Base64 (ex: TWluaGFOb3ZhU2VuaEAxMjM=)
-            // 4. Substitua o valor abaixo: 'V0ZCYXJiZXIyMDI1IQ==' por 'TWluaGFOb3ZhU2VuaEAxMjM='
-            // 5. Salve o arquivo
-            const senhaOfuscada = 'V0ZCYXJiZXIyMDI1IQ==';
-            const senhaCorreta = atob(senhaOfuscada); // Decodifica a senha
-            
-            // ⚠️ ATENÇÃO: Esta é uma proteção BÁSICA!
-            // Em ambientes estáticos (GitHub Pages), a senha sempre ficará visível
-            // para quem souber inspecionar o código. Para segurança real,
-            // seria necessário um backend com autenticação adequada.
-            
-            // Verifica se a senha está correta
-            if (senhaAdmin !== senhaCorreta) {
-                if (senhaAdmin !== null) { // Se não cancelou
-                    alert('❌ Senha incorreta!\n\nAcesso negado. Esta área é restrita aos administradores.');
-                }
-                return; // Sai da função sem mostrar o menu
-            }
-            
-            // Se chegou até aqui, a senha está correta
-            alert('✅ Acesso autorizado!\n\nBem-vindo ao painel administrativo, proprietário.');
-            
-            // Menu administrativo com opções
-            const opcao = prompt(`🔧 MENU ADMINISTRATIVO\n\nEscolha uma opção:\n\n1 - Ver estatísticas de agendamentos\n2 - Limpar agendamentos antigos (30+ dias)\n3 - LIMPAR TODOS os agendamentos\n4 - Criar agendamentos de teste\n5 - Remover agendamento específico\n6 - Alterar senha de administrador\n7 - Cancelar\n\nDigite o número da opção:`);
+            const opcao = prompt('1 - Estatísticas\n2 - Limpar antigos\n3 - Limpar todos\n4 - Criar testes\n5 - Remover específico\n6 - Alterar senha\n7 - Cancelar');
             
             switch(opcao) {
                 case '1':
@@ -1033,7 +1354,7 @@
                     limparAgendamentosAntigos();
                     const depois = contarAgendamentos();
                     const removidos = antes - depois;
-                    alert(`🧹 Limpeza concluída!\n\nAgendamentos removidos: ${removidos}\nAgendamentos restantes: ${depois}`);
+                    alert(`Removidos: ${removidos}\nRestantes: ${depois}`);
                     atualizarHorarios();
                     break;
                 case '3':
@@ -1050,29 +1371,63 @@
                     break;
                 case '7':
                 case null:
-                    // Cancelar
                     break;
                 default:
-                    alert('❌ Opção inválida! Tente novamente.');
+                    alert('Opção inválida!');
             }
         }
-        
+
+        function contarAgendamentos() {
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            return agendamentos.length;
+        }
+
+        function mostrarEstatisticas() {
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            const total = agendamentos.length;
+            
+            if (total === 0) {
+                alert('Nenhum agendamento registrado.');
+                return;
+            }
+            
+            const porBarbeiro = {};
+            agendamentos.forEach(agendamento => {
+                porBarbeiro[agendamento.barbeiro] = (porBarbeiro[agendamento.barbeiro] || 0) + 1;
+            });
+            
+            let mensagem = `Total de agendamentos: ${total}\n\nPor barbeiro:\n`;
+            
+            Object.keys(porBarbeiro).forEach(barbeiro => {
+                mensagem += `• ${barbeiro}: ${porBarbeiro[barbeiro]} agendamentos\n`;
+            });
+            
+            alert(mensagem);
+        }
+
+        function limparTodosAgendamentos() {
+            if (confirm('Esta ação irá remover TODOS os agendamentos. Deseja continuar?')) {
+                localStorage.removeItem('agendamentosWF');
+                alert('Todos os agendamentos foram removidos.');
+                atualizarHorarios();
+            }
+        }
+
         function criarAgendamentosTeste() {
-            // Função para criar agendamentos de teste para demonstração
-            if (!confirm('🧪 CRIAR AGENDAMENTOS DE TESTE\n\nEsta função irá criar alguns agendamentos de exemplo com datas antigas e recentes para você testar o sistema.\n\nDeseja continuar?')) {
+            if (!confirm('Criar agendamentos de teste?')) {
                 return;
             }
             
             const hoje = new Date();
             const agendamentosTeste = [];
             
-            // Agendamentos antigos (mais de 30 dias)
             const data45DiasAtras = new Date(hoje.getTime() - (45 * 24 * 60 * 60 * 1000));
             agendamentosTeste.push({
                 data: data45DiasAtras.toISOString().split('T')[0],
                 horario: '09:00',
                 barbeiro: 'Alex',
-                cliente: 'João Silva (TESTE - 45 dias atrás)',
+                cliente: 'João Silva (TESTE - 45 dias)',
+                servico: 'Corte Masculino - R$30,00',
                 timestamp: data45DiasAtras.getTime()
             });
             
@@ -1081,36 +1436,19 @@
                 data: data35DiasAtras.toISOString().split('T')[0],
                 horario: '14:00',
                 barbeiro: 'Wanderlei',
-                cliente: 'Pedro Santos (TESTE - 35 dias atrás)',
+                cliente: 'Pedro Santos (TESTE - 35 dias)',
+                servico: 'Barba Completa - R$30,00',
                 timestamp: data35DiasAtras.getTime()
             });
             
-            // Agendamentos recentes (menos de 30 dias)
             const data20DiasAtras = new Date(hoje.getTime() - (20 * 24 * 60 * 60 * 1000));
             agendamentosTeste.push({
                 data: data20DiasAtras.toISOString().split('T')[0],
                 horario: '10:30',
                 barbeiro: 'Alex',
-                cliente: 'Maria Oliveira (TESTE - 20 dias atrás)',
+                cliente: 'Maria Oliveira (TESTE - 20 dias)',
+                servico: 'Corte + Barba - R$55,00',
                 timestamp: data20DiasAtras.getTime()
-            });
-            
-            const data10DiasAtras = new Date(hoje.getTime() - (10 * 24 * 60 * 60 * 1000));
-            agendamentosTeste.push({
-                data: data10DiasAtras.toISOString().split('T')[0],
-                horario: '16:00',
-                barbeiro: 'Wanderlei',
-                cliente: 'Carlos Costa (TESTE - 10 dias atrás)',
-                timestamp: data10DiasAtras.getTime()
-            });
-            
-            // Agendamentos para hoje e futuro
-            agendamentosTeste.push({
-                data: hoje.toISOString().split('T')[0],
-                horario: '11:00',
-                barbeiro: 'Alex',
-                cliente: 'Ana Lima (TESTE - hoje)',
-                timestamp: hoje.getTime()
             });
             
             const amanha = new Date(hoje.getTime() + (1 * 24 * 60 * 60 * 1000));
@@ -1119,54 +1457,33 @@
                 horario: '15:30',
                 barbeiro: 'Wanderlei',
                 cliente: 'Roberto Ferreira (TESTE - amanhã)',
+                servico: 'Pacote Completo - R$80,00',
                 timestamp: amanha.getTime()
             });
             
-            // Salva os agendamentos de teste
             let agendamentosExistentes = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
             agendamentosExistentes = agendamentosExistentes.concat(agendamentosTeste);
             localStorage.setItem('agendamentosWF', JSON.stringify(agendamentosExistentes));
             
-            alert(`✅ Agendamentos de teste criados com sucesso!\n\nForam adicionados:\n• 2 agendamentos ANTIGOS (35-45 dias atrás)\n• 2 agendamentos RECENTES (10-20 dias atrás)\n• 2 agendamentos ATUAIS (hoje e amanhã)\n\nTotal: 6 agendamentos de teste\n\nAgora você pode:\n1. Ver estatísticas (opção 1)\n2. Testar limpeza de antigos (opção 2)\n3. Ver como os horários aparecem ocupados no formulário`);
-            
-            // Atualiza a exibição
+            alert('Agendamentos de teste criados com sucesso!');
             atualizarHorarios();
         }
-        
-        function alterarSenhaAdmin() {
-            // Função para alterar a senha de administrador
-            alert('🔐 ALTERAÇÃO DE SENHA\n\nPor segurança, a alteração da senha deve ser feita diretamente no código.\n\nInstruções:\n1. Abra o arquivo index.html em um editor\n2. Procure por "const senhaOfuscada = \'V0ZCYXJiZXIyMDI1IQ==\'"\n3. Substitua o valor entre aspas pela sua nova senha codificada em Base64\n4. Para codificar sua nova senha: acesse https://www.base64encode.org/\n5. Salve o arquivo\n\nExemplo:\n- Senha: MinhaNovaSenh@123\n- Base64: TWluaGFOb3ZhU2VuaEAxMjM=\n- Código: const senhaOfuscada = \'TWluaGFOb3ZhU2VuaEAxMjM=\';\n\nRecomendação: Use uma senha forte com letras, números e símbolos.');
-        }
-        
-        function verificarSenhaAdmin() {
-            // Função auxiliar para verificar se a senha padrão ainda está sendo usada
-            const senhaOfuscadaPadrao = 'QjEyMTIwNXMhCg=='; // Senha padrão: WFBarber2025!
-            const senhaOfuscadaAtual = 'QjEyMTIwNXMhCg==' // Mesma variável da função menuAdmin
-            
-            // Avisa se ainda está usando a senha padrão
-            if (senhaOfuscadaAtual === senhaOfuscadaPadrao) {
-                console.warn('⚠️ AVISO DE SEGURANÇA: Você ainda está usando a senha padrão do administrador!\n\nPara maior segurança, altere a senha antes de hospedar o site.\n\nInstruções:\n1. Acesse: https://www.base64encode.org/\n2. Digite sua nova senha\n3. Copie o código Base64 gerado\n4. Substitua o valor de "senhaOfuscada" no código\n\nSenha padrão atual: WFBarber2025!');
-            }
-        }
-        
+
         function removerAgendamentoEspecifico() {
-            // Função para listar e remover um agendamento específico
             const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
             
             if (agendamentos.length === 0) {
-                alert('📋 Nenhum agendamento encontrado!\n\nNão há agendamentos salvos no momento.');
+                alert('Nenhum agendamento encontrado!');
                 return;
             }
             
-            // Organiza agendamentos por data (mais recentes primeiro)
             agendamentos.sort((a, b) => {
                 const dataA = new Date(a.data + 'T' + a.horario);
                 const dataB = new Date(b.data + 'T' + b.horario);
                 return dataB - dataA;
             });
             
-            // Cria lista formatada para exibição
-            let listaAgendamentos = '📋 AGENDAMENTOS SALVOS\n\nEscolha qual deseja REMOVER:\n\n';
+            let listaAgendamentos = 'Escolha qual deseja REMOVER:\n\n';
             agendamentos.forEach((agendamento, index) => {
                 const dataFormatada = formatarDataBrasileira(agendamento.data);
                 const agendamentoAntigoDias = calcularDiasAtras(agendamento.data);
@@ -1177,398 +1494,62 @@
                 listaAgendamentos += `     Cliente: ${agendamento.cliente}${status}\n\n`;
             });
             
-            listaAgendamentos += `0 - Cancelar operação\n\nDigite o número do agendamento que deseja REMOVER:`;
+            listaAgendamentos += `0 - Cancelar\n\nDigite o número:`;
             
             const escolha = prompt(listaAgendamentos);
             
             if (escolha === null || escolha === '0') {
-                return; // Cancelou
+                return;
             }
             
             const indice = parseInt(escolha) - 1;
             
-            if (isNaN(indice) || indice < 0 || indice >= agendamentos.length) {
-                alert('❌ Opção inválida!\n\nPor favor, digite um número válido da lista.');
-                return;
+            if (indice >= 0 && indice < agendamentos.length) {
+                agendamentos.splice(indice, 1);
+                localStorage.setItem('agendamentosWF', JSON.stringify(agendamentos));
+                alert('Agendamento removido com sucesso!');
+            } else {
+                alert('Opção inválida!');
             }
-            
-            const agendamentoSelecionado = agendamentos[indice];
-            const dataFormatada = formatarDataBrasileira(agendamentoSelecionado.data);
-            
-            // Confirmação de remoção
-            const confirmacao = confirm(`⚠️ CONFIRMAR REMOÇÃO\n\nDeseja realmente REMOVER este agendamento?\n\n📅 Data: ${dataFormatada}\n🕐 Horário: ${agendamentoSelecionado.horario}\n✂️ Barbeiro: ${agendamentoSelecionado.barbeiro}\n👤 Cliente: ${agendamentoSelecionado.cliente}\n\n⚠️ Esta ação NÃO pode ser desfeita!`);
-            
-            if (!confirmacao) {
-                return; // Cancelou a remoção
-            }
-            
-            // Remove o agendamento específico
-            agendamentos.splice(indice, 1);
-            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentos));
-            
-            alert(`✅ Agendamento removido com sucesso!\n\n📅 ${dataFormatada} às ${agendamentoSelecionado.horario}\n✂️ ${agendamentoSelecionado.barbeiro}\n👤 ${agendamentoSelecionado.cliente}\n\nO horário agora está disponível novamente.`);
-            
-            // Atualiza a exibição dos horários
-            atualizarHorarios();
         }
-        
-        function formatarDataBrasileira(dataISO) {
-            // Converte data do formato YYYY-MM-DD para DD/MM/YYYY
-            const partes = dataISO.split('-');
+
+        function formatarDataBrasileira(data) {
+            const partes = data.split('-');
             return `${partes[2]}/${partes[1]}/${partes[0]}`;
         }
-        
-        function calcularDiasAtras(dataAgendamento) {
-            // Calcula quantos dias atrás foi o agendamento
+
+        function calcularDiasAtras(data) {
+            const dataAgendamento = new Date(data + 'T00:00:00');
             const hoje = new Date();
-            const dataAgend = new Date(dataAgendamento + 'T00:00:00');
-            const diferencaMs = hoje - dataAgend;
-            return Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+            
+            const diff = hoje.getTime() - dataAgendamento.getTime();
+            const diasAtras = Math.floor(diff / (1000 * 60 * 60 * 24));
+            
+            return diasAtras;
         }
 
-        // ========== FUNÇÃO PARA DEFINIR HORÁRIOS POR BARBEIRO ==========
-        function atualizarHorarios() {
-            const barbeiroSelecionado = document.getElementById('barbeiro').value;
-            const dataSelecionada = document.getElementById('data').value;
-            const selectHorario = document.getElementById('horario');
+        function alterarSenhaAdmin() {
+            const senhaAtual = prompt('Digite a senha atual:');
+            const senhaOfuscada = 'V0ZCYXJiZXIyMDI1IQ==';
+            const senhaCorreta = atob(senhaOfuscada);
             
-            // Limpa opções existentes
-            selectHorario.innerHTML = '<option value="">Selecione</option>';
-            
-            // Se não há data selecionada, exige seleção da data primeiro
-            if (!dataSelecionada) {
-                const option = document.createElement('option');
-                option.value = "";
-                option.textContent = "Selecione uma data primeiro";
-                option.disabled = true;
-                selectHorario.appendChild(option);
+            if (senhaAtual !== senhaCorreta) {
+                alert('Senha atual incorreta!');
                 return;
             }
             
-            // Pega o dia da semana da data selecionada (0=domingo, 1=segunda, ..., 6=sábado)
-            const dataSelecionadaObj = new Date(dataSelecionada + 'T00:00:00');
-            const diaSemana = dataSelecionadaObj.getDay();
+            const novaSenha = prompt('Digite a nova senha:');
             
-            let horariosDisponiveis = [];
-            
-            // Se não escolheu barbeiro específico, não mostra horários
-            if (!barbeiroSelecionado) {
-                const option = document.createElement('option');
-                option.value = "";
-                option.textContent = "Selecione um barbeiro primeiro";
-                option.disabled = true;
-                selectHorario.appendChild(option);
-                return;
-            }
-            // ========== HORÁRIOS DO ALEX ==========
-            else if (barbeiroSelecionado === 'Alex') {
-                if (diaSemana === 0) {
-                    // Domingo: Alex folga
-                    const option = document.createElement('option');
-                    option.value = "";
-                    option.textContent = "Alex não trabalha aos domingos";
-                    option.disabled = true;
-                    selectHorario.appendChild(option);
-                    return;
-                } else if (diaSemana >= 1 && diaSemana <= 5) {
-                    // Segunda a Sexta: 09:00-13:00 e 15:00-20:00
-                    horariosDisponiveis = [
-                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", 
-                        "12:00", "12:30", "13:00",
-                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", 
-                        "18:00", "18:30", "19:00", "19:30"
-                    ];
-                } else if (diaSemana === 6) {
-                    // Sábado: 09:00-13:00 e 15:00-18:30
-                    horariosDisponiveis = [
-                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", 
-                        "12:00", "12:30", "13:00",
-                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", 
-                        "18:00", "18:30"
-                    ];
-                }
-            }
-            // ========== HORÁRIOS DO WANDERLEI ==========
-            else if (barbeiroSelecionado === 'Wanderlei') {
-                if (diaSemana === 1) {
-                    // Segunda: Wanderlei folga
-                    const option = document.createElement('option');
-                    option.value = "";
-                    option.textContent = "Wanderlei não trabalha às segundas";
-                    option.disabled = true;
-                    selectHorario.appendChild(option);
-                    return;
-                } else if (diaSemana >= 2 && diaSemana <= 5) {
-                    // Terça a Sexta: 09:00-11:30 e 13:30-20:00
-                    horariosDisponiveis = [
-                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-                        "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", 
-                        "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30"
-                    ];
-                } else if (diaSemana === 6) {
-                    // Sábado: 09:00-11:30 e 13:30-18:30
-                    horariosDisponiveis = [
-                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-                        "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", 
-                        "16:30", "17:00", "17:30", "18:00", "18:30"
-                    ];
-                } else if (diaSemana === 0) {
-                    // Domingo: 09:00-14:00 (direto, sem almoço)
-                    horariosDisponiveis = [
-                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-                        "12:00", "12:30", "13:00", "13:30", "14:00"
-                    ];
-                }
-            }
-            
-            // Adiciona os horários disponíveis ao select, verificando se estão ocupados
-            if (horariosDisponiveis.length > 0) {
-                let horariosLivres = 0; // Contador de horários livres
-                
-                horariosDisponiveis.forEach(horario => {
-                    const option = document.createElement('option');
-                    option.value = horario;
-                    
-                    // Verifica se o horário já está ocupado para este barbeiro e data
-                    const horarioOcupado = verificarHorarioOcupado(dataSelecionada, horario, barbeiroSelecionado);
-                    
-                    if (horarioOcupado) {
-                        // Se o horário está ocupado, marca como indisponível
-                        option.textContent = `${horario} - OCUPADO`;
-                        option.disabled = true;
-                        option.style.color = '#999'; // Cor cinza para indicar indisponibilidade
-                        option.style.fontStyle = 'italic'; // Itálico para destacar
-                    } else {
-                        // Se o horário está livre, mostra normalmente
-                        option.textContent = horario;
-                        horariosLivres++; // Incrementa contador de horários livres
-                    }
-                    
-                    selectHorario.appendChild(option);
-                });
-                
-                // Se não há horários livres, adiciona uma mensagem informativa
-                if (horariosLivres === 0) {
-                    const optionInfo = document.createElement('option');
-                    optionInfo.value = "";
-                    optionInfo.textContent = "❌ Todos os horários estão ocupados neste dia";
-                    optionInfo.disabled = true;
-                    optionInfo.style.color = '#d32f2f';
-                    optionInfo.style.fontWeight = 'bold';
-                    selectHorario.appendChild(optionInfo);
-                }
-            } else {
-                const option = document.createElement('option');
-                option.value = "";
-                option.textContent = "Nenhum horário disponível";
-                option.disabled = true;
-                selectHorario.appendChild(option);
-            }
-        }
-
-        // ========== SEÇÃO 2: MENU MOBILE ==========
-        // Esta seção controla o menu que aparece em telas pequenas (celulares)
-        
-        // Busca o botão do menu pelo ID 'menuBtn' e adiciona um evento de clique
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            // Quando o botão é clicado, busca o elemento do menu mobile pelo ID
-            const menu = document.getElementById('mobileMenu');
-            // Alterna a classe 'hidden' - se estiver escondido, mostra; se estiver visível, esconde
-            menu.classList.toggle('hidden');
-        });
-
-        // ========== SEÇÃO 3: PREENCHIMENTO AUTOMÁTICO DE SERVIÇO ==========
-        // Esta função é chamada quando clicamos no botão "Agendar" de um serviço específico
-        
-        function prefillService(servico) {
-            // Busca o elemento select (lista suspensa) de serviços pelo ID
-            const servicoSelect = document.getElementById('servico');
-            
-            // Loop que percorre todas as opções disponíveis no select
-            for (let i = 0; i < servicoSelect.options.length; i++) {
-                // Verifica se o texto da opção atual começa com o nome do serviço clicado
-                if (servicoSelect.options[i].text.startsWith(servico)) {
-                    // Se encontrar, seleciona esta opção automaticamente
-                    servicoSelect.selectedIndex = i;
-                    // Para o loop pois já encontrou o que precisava
-                    break;
-                }
-            }
-            
-            // Atualiza os horários após selecionar o serviço
-            atualizarHorarios();
-            
-            // Rola a página suavemente até a seção de agendamento
-            document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // ========== SEÇÃO 4: ENVIO DO FORMULÁRIO PARA WHATSAPP ==========
-        // Esta função é executada quando o formulário de agendamento é enviado
-        
-        function submitForm(event) {
-            // Impede o comportamento padrão do formulário (recarregar a página)
-            event.preventDefault();
-            
-            // ========== VALIDAÇÃO DE FOLGAS ==========
-            // Verifica se o barbeiro está disponível na data selecionada
-            const dataValidacao = document.getElementById('data').value;
-            const barbeiroValidacao = document.getElementById('barbeiro').value;
-            const horarioValidacao = document.getElementById('horario').value;
-            
-            if (dataValidacao && barbeiroValidacao) {
-                const dataSelecionadaObj = new Date(dataValidacao + 'T00:00:00');
-                const diaSemana = dataSelecionadaObj.getDay();
-                
-                // Validação para Alex (folga no domingo)
-                if (barbeiroValidacao === 'Alex' && diaSemana === 0) {
-                    alert('Alex não trabalha aos domingos. Por favor, escolha outro dia ou barbeiro.');
-                    return;
-                }
-                
-                // Validação para Wanderlei (folga na segunda)
-                if (barbeiroValidacao === 'Wanderlei' && diaSemana === 1) {
-                    alert('Wanderlei não trabalha às segundas-feiras. Por favor, escolha outro dia ou barbeiro.');
-                    return;
-                }
-            }
-            
-            // Validação adicional: verifica se há horário selecionado
-            if (!horarioValidacao) {
-                alert('Por favor, selecione um horário válido.');
+            if (!novaSenha) {
+                alert('Senha não pode ser vazia!');
                 return;
             }
             
-            // *** NÚMERO DO WHATSAPP DA WF BARBEARIA ***
-            const ownerPhone = '5561998651796'; // WhatsApp da WF Barbearia: (61) 99865-1796
+            const novaSenhaOfuscada = btoa(novaSenha);
+            console.log('Nova senha ofuscada:', novaSenhaOfuscada);
             
-            // ========== COLETA DOS DADOS DO FORMULÁRIO ==========
-            // Busca cada campo do formulário pelo ID e pega o valor digitado
-            const nome = document.getElementById('nome').value;           // Nome do cliente
-            const telefone = document.getElementById('telefone').value;   // Telefone do cliente
-            const data = document.getElementById('data').value;           // Data escolhida
-            const horario = document.getElementById('horario').value;     // Horário escolhido
-            const servico = document.getElementById('servico').value;     // Serviço selecionado
-            const barbeiro = document.getElementById('barbeiro').value;   // Barbeiro preferido (opcional)
-            
-            // ========== VERIFICAÇÃO FINAL DE HORÁRIO OCUPADO ==========
-            // Última verificação antes de salvar (evita conflitos)
-            if (verificarHorarioOcupado(data, horario, barbeiro)) {
-                alert('❌ Este horário acabou de ser ocupado por outro cliente. Por favor, escolha outro horário.');
-                atualizarHorarios(); // Atualiza a lista de horários
-                return;
-            }
-            
-            // ========== SALVAR AGENDAMENTO ==========
-            // Salva o agendamento no localStorage antes de enviar para WhatsApp
-            salvarAgendamento(data, horario, barbeiro, nome);
-            
-            // ========== FORMATAÇÃO DA MENSAGEM ==========
-            // Cria uma mensagem formatada e atrativa que será enviada pelo WhatsApp
-            const mensagem = `🚀 NOVO AGENDAMENTO WF BARBEARIA 🚀\n\n` +
-                 `👤 Cliente: ${nome}\n` +
-                 `📱 Telefone: ${telefone}\n` +
-                 `📅 Data: ${formatDate(data)}\n` +
-                 `⏰ Horário: ${horario}\n` +
-                 `✂️ Serviço: ${servico}\n` +
-                 `💈 Barbeiro: ${barbeiro || 'Qualquer um de nossa equipe'}\n\n` +
-                 `🎯 CONFIRME O HORÁRIO DISPONÍVEL\n\n` +
-                 `📋 INFORMAÇÕES IMPORTANTES:\n` +
-                 `• Aceitamos: Dinheiro, PIX e Cartão\n\n` +
-                 `🔄 PRECISA ALTERAR?\n` +
-                 `• Para cancelar ou remarcar: Avise com pelo menos 2 horas de antecedência\n` +
-                 `💡 Alterações de última hora podem gerar taxa adicional\n\n` +
-                 `🌟 Obrigado por escolher a WF Barbearia!\n` +
-                 `📍 Seu estilo é nossa missão! 💈✨\n\n` +
-                 `🌐 Site: https://brendinhabrs.github.io/wf/\n` +
-                 `📸 Instagram: @wanderlei_barber29`;
-            
-            // ========== ABERTURA DO WHATSAPP ==========
-            // Cria o link do WhatsApp e abre em nova aba
-            const linkWhatsApp = `https://wa.me/${ownerPhone}?text=${encodeURIComponent(mensagem)}`;
-            
-            // Tenta abrir o WhatsApp de diferentes formas para garantir compatibilidade
-            if (window.navigator.userAgent.includes('Mobile')) {
-                // Em dispositivos móveis, abre diretamente o app do WhatsApp
-                window.location.href = linkWhatsApp;
-            } else {
-                // Em desktop, abre em nova aba
-                const novaAba = window.open(linkWhatsApp, '_blank');
-                
-                // Se não conseguir abrir nova aba (bloqueador de popup), 
-                // redireciona na mesma aba
-                if (!novaAba || novaAba.closed || typeof novaAba.closed == 'undefined') {
-                    window.location.href = linkWhatsApp;
-                }
-            }
-            
-            // ========== MENSAGEM DE CONFIRMAÇÃO ==========
-            // Mostra uma mensagem de sucesso personalizada e profissional para o usuário
-            const mensagemConfirmacao = `🎉 AGENDAMENTO REALIZADO COM SUCESSO! 🎉\n\n` +
-                                      `Olá, ${nome}! Seja bem-vindo(a) à WF Barbearia! 👋\n\n` +
-                                      `📋 RESUMO DO SEU AGENDAMENTO:\n` +
-                                      `📅 Data: ${formatDate(data)}\n` +
-                                      `⏰ Horário: ${horario}\n` +
-                                      `💺 Barbeiro: ${barbeiro || 'Qualquer um de nossa equipe'}\n` +
-                                      `✂️ Serviço: ${servico.split(' - ')[0]}\n\n` +
-                                      `📱 PRÓXIMOS PASSOS:\n` +
-                                      `1️⃣ Você será redirecionado para nosso WhatsApp\n` +
-                                      `2️⃣ Aguarde nossa confirmação em alguns minutos\n` +
-                                      `💡 INFORMAÇÕES IMPORTANTES:\n` +
-                                      `• Aceitamos: Dinheiro, PIX e Cartão\n` +
-                                      `• Em caso de imprevisto, nos avise com antecedência\n` +
-                                      `• Siga-nos no Instagram @wanderlei_barber29\n\n` +
-                                      `✨ Obrigado por escolher a WF Barbearia!\n` +
-                                      `Estamos ansiosos para cuidar do seu visual! �\n\n` +
-                                      `Equipe WF Barbearia - Excelência em cuidados masculinos`;
-            
-            alert(mensagemConfirmacao);
-            
-            // ========== LIMPEZA DO FORMULÁRIO ==========
-            // Limpa todos os campos do formulário após enviar
-            document.getElementById('agendamentoForm').reset();
-            
-            // Redefine a data mínima após reset
-            const hoje = new Date();
-            const dataFormatada = hoje.toISOString().split('T')[0];
-            document.getElementById('data').min = dataFormatada;
-            
-            // Atualiza os horários após reset
-            atualizarHorarios();
+            alert('Senha alterada com sucesso! (veja no console a nova senha ofuscada)');
         }
-
-        // ========== SEÇÃO 5: FORMATADOR DE DATA ==========
-        // Função que converte a data do formato americano (yyyy-mm-dd) para brasileiro (dd/mm/yyyy)
-        
-        function formatDate(dateString) {
-            // Cria um objeto Date a partir da string de data
-            const date = new Date(dateString);
-            // Converte para formato brasileiro (dd/mm/yyyy)
-            return date.toLocaleDateString('pt-BR');
-        }
-        
-        // ========== INICIALIZAÇÃO AUTOMÁTICA DA PÁGINA ==========
-        // Executa quando a página termina de carregar
-        window.onload = function() {
-            // Limpa agendamentos antigos automaticamente
-            limparAgendamentosAntigos();
-            
-            // Configura a data mínima como hoje
-            const hoje = new Date();
-            const dataFormatada = hoje.toISOString().split('T')[0];
-            document.getElementById('data').min = dataFormatada;
-            
-            // Inicializa os horários
-            atualizarHorarios();
-            
-            // Verifica se ainda está usando a senha padrão (aviso no console)
-            verificarSenhaAdmin();
-            
-            // ========== AVISO DE SEGURANÇA NO CONSOLE ==========
-            console.log('🔐 WF BARBEARIA - Sistema de Agendamento');
-            console.log('⚠️ LEMBRETE: Se você é o proprietário, lembre-se de trocar a senha do administrador!');
-            console.log('📖 Instruções: Procure por "COMO TROCAR A SENHA" no código ou acesse o menu admin > Alterar Senha');
-            console.log('🌐 Para hospedagem no GitHub Pages, a senha ficará sempre visível no código (limitação de site estático)');
-        };
     </script>
 </body>
 </html>

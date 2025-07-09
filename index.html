@@ -1,0 +1,1580 @@
+<!-- ========== DECLARAÇÃO DO D        /* Configurações para o banner principal (hero banner) */
+        .hero-banner {
+            height: 85vh;                    /* Altura de 85% da tela em computadores */
+            background-size: cover;          /* Imagem cobre toda a área */
+            background-position: center;     /* Imagem centralizada */
+        }
+        
+        /* Configuração responsiva: em telas pequenas (celulares) */
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 65vh;                /* Altura menor em celulares (65% da tela) */
+            }
+        }5 ========== -->
+<!DOCTYPE html>
+<!-- Declara que este é um documento HTML5 moderno -->
+
+<!-- ========== ELEMENTO RAIZ DO HTML ========== -->
+<html lang="pt-BR">
+<!-- Define o idioma da página como Português do Brasil para acessibilidade e SEO -->
+
+<!-- ========== CABEÇALHO DO DOCUMENTO (NÃO VISÍVEL) ========== -->
+<head>
+    <!-- Define a codificação de caracteres para suportar acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    
+    <!-- Configura a página para ser responsiva (adaptar a diferentes tamanhos de tela) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título que aparece na aba do navegador -->
+    <title>WF BARBEARIA</title>
+    
+    <!-- Carrega o framework CSS TailwindCSS via CDN (Content Delivery Network) -->
+    <!-- TailwindCSS é um framework que fornece classes CSS prontas para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ========== EMAILJS PARA ENVIO AUTOMÁTICO DE EMAILS ========== -->
+    <!-- EmailJS permite enviar emails automaticamente do frontend -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- EmailJS para envio automático de emails -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- ========== ESTILOS CSS PERSONALIZADOS ========== -->
+    <style>
+        /* Efeito de animação nos cards de serviços quando o mouse passa por cima */
+        .service-card:hover {
+            transform: translateY(-5px);    /* Move o card 5px para cima */
+            transition: all 0.3s ease;      /* Animação suave de 0.3 segundos */
+        }
+        
+        /* Configurações para o banner principal (hero banner) */
+        .hero-banner {
+            height: 85vh;                    /* Altura de 85% da tela em computadores (aumentado!) */
+            background-size: cover;          /* Imagem cobre toda a área */
+            background-position: center;     /* Imagem centralizada */
+        }
+        
+        /* Configuração responsiva: em telas pequenas (celulares) */
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 65vh;                /* Altura maior em celulares (65% da tela - aumentado!) */
+            }
+        }
+        
+        /* Estilo para etiquetas de preço (atualmente não usado no HTML) */
+        .price-tag {
+            background-color: #f59e0b;      /* Cor de fundo laranja */
+            color: white;                   /* Texto branco */
+            padding: 0.25rem 0.75rem;       /* Espaçamento interno */
+            border-radius: 9999px;          /* Bordas totalmente arredondadas */
+            font-weight: bold;              /* Texto em negrito */
+        }
+    </style>
+</head>
+<!-- ========== CORPO DO DOCUMENTO (PARTE VISÍVEL) ========== -->
+<body class="bg-gray-100">
+<!-- Classe TailwindCSS que define fundo cinza claro para toda a página -->
+
+    <!-- ========== CABEÇALHO/HEADER DA PÁGINA ========== -->
+    <header class="bg-gray-900 text-white">
+    <!-- Cabeçalho com fundo escuro (cinza-900) e texto branco -->
+    
+        <!-- Container principal que centraliza o conteúdo e adiciona margens laterais -->
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- 
+        - container: largura máxima responsiva
+        - mx-auto: centraliza horizontalmente 
+        - px-4: padding lateral de 4 unidades
+        - py-4: padding vertical de 4 unidades
+        - flex: transforma em container flexível
+        - justify-between: espaça elementos nas extremidades
+        - items-center: alinha verticalmente no centro
+        -->
+        
+            <!-- ========== ÁREA DA LOGO ========== -->
+            <div class="flex items-center">
+            <!-- Container flexível que alinha a logo verticalmente -->
+            
+                <!-- Imagem da logo da WF Barbearia -->
+                <img src="wf logo png.svg" 
+                     alt="Logo da WF Barbearia" 
+                     class="h-36">
+                <!-- 
+                - src: logo personalizada da WF Barbearia
+                - alt: texto alternativo para acessibilidade
+                - h-36: altura de 36 unidades TailwindCSS (9rem = 144px - gigante!)
+                -->
+            </div>
+            
+            <!-- ========== MENU DE NAVEGAÇÃO (DESKTOP) ========== -->
+            <nav class="hidden md:flex space-x-6">
+            <!-- 
+            - hidden: escondido por padrão
+            - md:flex: visível como flex apenas em telas médias e maiores (tablets/desktop)
+            - space-x-6: espaçamento horizontal de 6 unidades entre itens
+            -->
+            
+                <!-- Links de navegação -->
+                <a href="#servicos" class="hover:text-amber-400">Serviços</a>
+                <!-- hover:text-amber-400: muda cor para âmbar ao passar o mouse -->
+                
+                <a href="#agendamento" class="hover:text-amber-400">Agendar</a>
+                <a href="#localizacao" class="hover:text-amber-400">Localização</a>
+            </nav>
+            
+            <!-- ========== BOTÃO DO MENU MOBILE ========== -->
+            <button class="md:hidden" id="menuBtn">
+            <!-- 
+            - md:hidden: escondido em telas médias e maiores
+            - id="menuBtn": identificador único para JavaScript
+            -->
+            
+                <!-- Ícone de hambúrguer (3 linhas) usando SVG -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- 
+                - w-6 h-6: largura e altura de 6 unidades
+                - fill="none": sem preenchimento
+                - stroke="currentColor": contorno com a cor atual do texto
+                - viewBox: área visível do SVG
+                -->
+                
+                    <!-- Caminho que desenha as 3 linhas do ícone -->
+                    <path stroke-linecap="round" 
+                          stroke-linejoin="round" 
+                          stroke-width="2" 
+                          d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                    <!-- d="M4 6h16M4 12h16M4 18h16": coordenadas que desenham as 3 linhas horizontais -->
+                </svg>
+            </button>
+        </div>
+        
+        <!-- ========== MENU MOBILE (ESCONDIDO POR PADRÃO) ========== -->
+        <div class="md:hidden hidden bg-gray-800" id="mobileMenu">
+        <!-- 
+        - md:hidden: escondido em telas médias e maiores
+        - hidden: escondido por padrão (JavaScript remove/adiciona esta classe)
+        - bg-gray-800: fundo cinza mais escuro
+        - id="mobileMenu": identificador para JavaScript
+        -->
+        
+            <!-- Container dos links do menu mobile -->
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+            <!-- 
+            - flex-col: organiza itens em coluna (vertical)
+            - space-y-3: espaçamento vertical de 3 unidades entre itens
+            -->
+            
+                <!-- Links do menu mobile (mesmos do desktop, mas em layout vertical) -->
+                <a href="#servicos" class="block py-2 hover:text-gray-400">Serviços</a>
+                <!-- block: cada link ocupa uma linha inteira -->
+                <!-- py-2: padding vertical para área clicável maior -->
+                
+                <a href="#agendamento" class="block py-2 hover:text-gray-400">Agendar</a>
+                <a href="#localizacao" class="block py-2 hover:text-gray-400">Localização</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== BANNER PRINCIPAL (HERO BANNER) ========== -->
+    <div class="hero-banner bg-cover bg-center flex items-end" 
+         style="background-image: url('www.svg');">
+    <!-- 
+    - hero-banner: classe CSS personalizada definida no <style>
+    - bg-cover: imagem cobre toda a área sem distorção
+    - bg-center: imagem centralizada
+    - flex items-end: conteúdo alinhado na parte inferior
+    - style="background-image": usa a imagem www como fundo do banner
+    -->
+    
+        <!-- Container principal do banner -->
+        <div class="container mx-auto px-4 flex justify-center items-end h-full pb-16">
+        <!-- Centraliza o conteúdo tanto horizontalmente quanto verticalmente -->
+        
+            <!-- Botão principal de call-to-action centralizado -->
+            <a href="#agendamento" 
+               class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 px-8 rounded-lg transition duration-300 shadow-lg">
+               Agendar Horário
+            </a>
+            <!-- 
+            - href="#agendamento": link para a seção de agendamento na mesma página
+            - bg-amber-500: fundo âmbar (dourado)
+            - hover:bg-amber-600: fundo âmbar mais escuro ao passar o mouse
+            - py-4 px-8: padding maior para destaque
+            - transition duration-300: animação suave de 300ms
+            - shadow-lg: sombra para destacar o botão
+            -->
+        </div>
+    </div>
+
+    <!-- ========== SEÇÃO DE SERVIÇOS ========== -->
+    <section id="servicos" class="py-16 bg-white">
+    <!-- 
+    - section: elemento semântico HTML5 para seções de conteúdo
+    - id="servicos": identificador único para navegação e links âncora
+    - py-16: padding vertical de 16 unidades (espaçamento interno grande)
+    - bg-white: fundo branco
+    -->
+    
+        <!-- Container principal da seção -->
+        <div class="container mx-auto px-4">
+        
+            <!-- Título da seção -->
+            <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
+            <!-- 
+            - h2: título de segundo nível (hierarquia semântica)
+            - text-3xl: tamanho de fonte grande
+            - text-center: texto centralizado
+            - mb-12: margem inferior de 12 unidades (muito espaço)
+            -->
+            
+            <!-- ========== GRID DE SERVIÇOS ========== -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 
+            SISTEMA DE GRID RESPONSIVO:
+            - grid: ativa o sistema de grid CSS
+            - grid-cols-1: 1 coluna em mobile (telas pequenas)
+            - md:grid-cols-2: 2 colunas em tablets (telas médias)
+            - lg:grid-cols-3: 3 colunas em desktop (telas grandes)
+            - gap-8: espaçamento de 8 unidades entre os cards
+            -->
+            
+                <!-- ========== SERVIÇO 1: CORTES MASCULINOS ========== -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <!-- 
+                - service-card: classe personalizada para animação (definida no CSS)
+                - bg-white: fundo branco
+                - rounded-lg: bordas arredondadas grandes
+                - shadow-lg: sombra grande
+                - overflow-hidden: esconde conteúdo que sair da borda
+                - hover:shadow-xl: sombra extra grande ao passar o mouse
+                - transition duration-300: animação suave de 300ms
+                -->
+                
+                    <!-- Área da imagem do serviço -->
+                    <div class="h-48 overflow-hidden">
+                    <!-- 
+                    - h-48: altura fixa de 48 unidades
+                    - overflow-hidden: corta a imagem se for maior que a área
+                    -->
+                    
+                        <!-- Imagem do serviço -->
+                        <img src="corte masculino em geral.png" 
+                             alt="Homem recebendo corte tradicional na barbearia" 
+                             class="w-full h-full object-contain object-center">
+                        <!-- 
+                        - src: endereço da imagem (placeholder temporário)
+                        - alt: descrição para acessibilidade e SEO
+                        - w-full h-full: largura e altura 100% do container pai
+                        - object-contain object-center: mantém proporção da imagem inteira e centralizada
+                        -->
+                    </div>
+                    
+                    <!-- Área de conteúdo do card -->
+                    <div class="p-6">
+                    <!-- p-6: padding de 6 unidades em todos os lados -->
+                    
+                        <!-- Nome do serviço -->
+                        <h3 class="text-xl font-bold mb-2">Cortes Masculinos</h3>
+                        <!-- 
+                        - h3: título de terceiro nível
+                        - text-xl: tamanho de fonte xl
+                        - mb-2: margem inferior pequena
+                        -->
+                        
+                        <!-- Descrição do serviço -->
+                        <p class="text-gray-600 mb-4">Cortes clássicos e modernos, incluindo acabamento com tesoura e máquina.</p>
+                        <!-- 
+                        - text-gray-600: cor cinza média
+                        - mb-4: margem inferior média
+                        -->
+                        
+                        <!-- Área do preço e botão de agendamento -->
+                        <div class="flex justify-between items-center">
+                        <!-- 
+                        - flex: layout flexível
+                        - justify-between: espaça elementos nas extremidades
+                        - items-center: alinha verticalmente no centro
+                        -->
+                        
+                            <!-- Preço do serviço -->
+                            <span class="text-gray-500 font-bold text-lg">R$ 30,00</span>
+                            <!-- 
+                            - text-amber-500: cor âmbar (dourada)
+                            - font-bold: texto em negrito
+                            - text-lg: tamanho de fonte grande
+                            -->
+                            
+                            <!-- Botão de agendamento -->
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" 
+                                    onclick="prefillService('Cortes Masculinos - R$30')">
+                                Agendar
+                            </button>
+                            <!-- 
+                            - text-sm: texto pequeno
+                            - bg-gray-200: fundo cinza claro
+                            - hover:bg-gray-300: fundo cinza mais escuro ao passar mouse
+                            - px-3 py-1: padding horizontal 3, vertical 1
+                            - rounded: bordas arredondadas pequenas
+                            - onclick: função JavaScript executada ao clicar
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== DEMAIS SERVIÇOS (2-14) ========== -->
+                <!-- NOTA: Todos seguem a mesma estrutura do Serviço 1, apenas mudando:
+                     - Conteúdo da imagem (src e alt)
+                     - Nome do serviço (h3)
+                     - Descrição (p)
+                     - Preço (span)
+                     - Parâmetro do onclick
+                -->
+
+                <!-- Serviço 2: Corte Máquina -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="corte máquina pente unico.png" alt="Homem cortando cabelo com máquina de corte" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte Máquina</h3>
+                        <p class="text-gray-600 mb-4">Corte utilizando máquina com pente único ou dois pentes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 20,00 - R$25,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte Máquina - R$20-R$25')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="corte navallhado.png" alt="Barbeiro usando navalha para fazer acabamento" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte Navalhado</h3>
+                        <p class="text-gray-600 mb-4">Corte com acabamento perfeito utilizando navalha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 35,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte Navalhado - R$35')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="criancinha.jpeg" alt="Criança recebendo corte de cabelo" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte Infantil</h3>
+                        <p class="text-gray-600 mb-4">Corte especial para crianças com ambiente acolhedor.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 35,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte Infantil - R$35')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 5 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Raspagem total na navalha.png" alt="Homem fazendo raspagem total na navalha" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Raspagem Total</h3>
+                        <p class="text-gray-600 mb-4">Raspagem completa utilizando navalha profissional.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 25,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Raspagem Total - R$25')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 6 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Acabamento com navalha(pezinho).png" alt="Acabamento de pezinho com navalha" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Acabamento Navalha</h3>
+                        <p class="text-gray-600 mb-4">Acabamento perfeito no pezinho utilizando navalha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 10,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Acabamento Navalha - R$10')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 7 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="barba.jpeg" alt="Homem fazendo a barba com navalha" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Barba Completa</h3>
+                        <p class="text-gray-600 mb-4">Aparo e modelagem de barba com produtos premium.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 30,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Barba Completa - R$30')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 8 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="sobrancelha.png" alt="Design de sobrancelha masculina" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Design Sobrancelha</h3>
+                        <p class="text-gray-600 mb-4">Design profissional de sobrancelha masculina.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 15,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Design Sobrancelha - R$15')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 9 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+
+                        <img src="corte+sobrancelha.png" alt="Homem recebendo corte e sobrancelha" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte + Sobrancelha</h3>
+                        <p class="text-gray-600 mb-4">Pacote com corte de cabelo e design de sobrancelha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 40,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte + Sobrancelha - R$40')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 10 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="graxa.jpeg" alt="Produtos para alisamento de cabelo" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Alisante (Graxa)</h3>
+                        <p class="text-gray-600 mb-4">Tratamento alisante com graxa de qualidade.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 30,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Alisante (Graxa) - R$30')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 11 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="graxa+corte.jpeg" alt="Homem recebendo corte e alisante" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte + Alisante</h3>
+                        <p class="text-gray-600 mb-4">Pacote com corte de cabelo e alisante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 55,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte + Alisante - R$55')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 12 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="corte+barba.jpeg" alt="Homem recebendo corte de cabelo e barba" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte + Barba</h3>
+                        <p class="text-gray-600 mb-4">Pacote completo com corte e barba.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 55,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte + Barba - R$55')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 13 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="corte+barba+sobrancelha.jpeg" alt="Homem recebendo corte, barba e design de sobrancelha" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corte + Barba + Sobrancelha</h3>
+                        <p class="text-gray-600 mb-4">Pacote premium com corte, barba e design de sobrancelha.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 60,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Corte + Barba + Sobrancelha - R$60')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 14 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                       
+                        <img src="corte+graxa+barba+sobrancelha.jpeg" 
+                             alt="Homem recebendo serviço completo na barbearia" 
+                             class="w-full h-full object-contain object-center">
+                       
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pacote Completo</h3>
+                        <p class="text-gray-600 mb-4">Corte + barba + sobrancelha + alisante (graxa).</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 font-bold text-lg">R$ 80,00</span>
+                            <button class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded" onclick="prefillService('Pacote Completo - R$80')">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEÇÃO DOS BARBEIROS ========== -->
+    <section class="py-16 bg-gray-100">
+    <!-- Seção com fundo cinza claro para alternar com a seção anterior (branca) -->
+    
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nossos Barbeiros</h2>
+            
+            <!-- Grid responsivo para os cards dos barbeiros -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Nota: lg:grid-cols-2 mantém 2 colunas mesmo em telas grandes (só 2 barbeiros) -->
+            
+                <!-- ========== BARBEIRO ALEX ========== -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <!-- shadow-md: sombra média (menor que nos serviços) -->
+                
+                    <!-- Foto do barbeiro -->
+                    <div class="h-64 overflow-hidden">
+                    <!-- h-64: altura maior que os serviços para mostrar melhor a pessoa -->
+                    
+                        <img src="alexx.jpeg" 
+                             alt="Barbeiro Alex, especialista em cortes modernos e barba completa" 
+                             class="w-full h-full object-contain object-center">
+                            
+                    </div>
+                    
+                    <!-- Informações do barbeiro -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">Alex</h3>
+                      
+                        <!-- Tags de especialidades -->
+                        <div class="flex flex-wrap gap-2">
+                        <!-- 
+                        - flex-wrap: permite que itens quebrem linha se necessário
+                        - gap-2: espaçamento pequeno entre as tags
+                        -->
+                        
+                            <span class=" px-3 py-1 rounded-full text-sm"></span>
+                            <span class=" px-3 py-1 rounded-full text-sm"></span>
+                            <span class=" px-3 py-1 rounded-full text-sm"></span>
+                            <!-- 
+                            - rounded-full: bordas totalmente arredondadas (formato de pílula)
+                            - text-sm: texto pequeno
+                            -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barbeiro Wanderlei -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="wanderleii.jpeg" alt="Barbeiro Wanderlei" class="w-full h-full object-contain object-center">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">Wanderlei</h3>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEÇÃO DE AGENDAMENTO ========== -->
+    <section id="agendamento" class="py-16 bg-white">
+    <!-- id="agendamento": permite navegação direta para esta seção -->
+    
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Agendamento</h2>
+            
+            <!-- Container do formulário com fundo diferenciado -->
+            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+            <!-- 
+            - max-w-2xl: largura máxima responsiva
+            - mx-auto: centraliza horizontalmente
+            - bg-gray-50: fundo cinza muito claro
+            - p-8: padding generoso
+            - shadow-md: sombra média para destacar
+            -->
+            
+                <!-- ========== FORMULÁRIO HTML ========== -->
+                <form id="agendamentoForm" onsubmit="submitForm(event)">
+                <!-- 
+                - id="agendamentoForm": identificador único para JavaScript
+                - onsubmit="submitForm(event)": função executada ao enviar formulário
+                -->
+                
+                    <!-- ========== CAMPO NOME ========== -->
+                    <div class="mb-4">
+                    <!-- mb-4: margem inferior para espaçar campos -->
+                    
+                        <!-- Label (rótulo) do campo -->
+                        <label class="block text-gray-700 mb-2" for="nome">Nome Completo</label>
+                        <!-- 
+                        - block: rótulo ocupa linha inteira
+                        - for="nome": associa o rótulo ao campo com id="nome"
+                        - text-gray-700: cor cinza escura
+                        -->
+                        
+                        <!-- Campo de entrada de texto -->
+                        <input type="text" 
+                               id="nome" 
+                               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                               required>
+                        <!-- 
+                        - type="text": campo de texto simples
+                        - id="nome": identificador único
+                        - w-full: largura 100%
+                        - px-4 py-2: padding interno confortável
+                        - border: borda padrão
+                        - rounded-lg: bordas arredondadas
+                        - focus:outline-none: remove contorno padrão ao focar
+                        - focus:ring-2 focus:ring-blue-400: anel azul ao focar
+                        - required: campo obrigatório (validação HTML5)
+                        -->
+                    </div>
+                    
+                    <!-- ========== CAMPO TELEFONE ========== -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="telefone">Número de Telefone</label>
+                        <input type="tel" 
+                               id="telefone" 
+                               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                               placeholder="(00) 00000-0000" 
+                               required>
+                        <!-- 
+                        - type="tel": tipo telefone (abre teclado numérico em mobile)
+                        - placeholder: texto de exemplo que aparece quando vazio
+                        -->
+                    </div>
+                    
+                    <!-- ========== CAMPO SERVIÇO ========== -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="servico">Serviço</label>
+                        <select id="servico" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+                            <option value="">Selecione o serviço</option>
+                            <option value="Cortes Masculinos - R$30,00">Cortes Masculinos - R$30,00</option>
+                            <option value="Corte Máquina (Pente Único) - R$20,00">Corte Máquina (Pente Único) - R$20,00</option>
+                            <option value="Corte Máquina (Dois Pentes) - R$25,00">Corte Máquina (Dois Pentes) - R$25,00</option>
+                            <option value="Corte Navalhado - R$35,00">Corte Navalhado - R$35,00</option>
+                            <option value="Corte Infantil - R$35,00">Corte Infantil - R$35,00</option>
+                            <option value="Raspagem Total - R$25,00">Raspagem Total - R$25,00</option>
+                            <option value="Acabamento Navalha - R$10,00">Acabamento Navalha - R$10,00</option>
+                            <option value="Barba Completa - R$30,00">Barba Completa - R$30,00</option>
+                            <option value="Design Sobrancelha - R$15,00">Design Sobrancelha - R$15,00</option>
+                            <option value="Corte + Sobrancelha - R$40,00">Corte + Sobrancelha - R$40,00</option>
+                            <option value="Alisante (Graxa) - R$30,00">Alisante (Graxa) - R$30,00</option>
+                            <option value="Corte + Alisante - R$55,00">Corte + Alisante - R$55,00</option>
+                            <option value="Corte + Barba - R$55,00">Corte + Barba - R$55,00</option>
+                            <option value="Corte + Barba + Sobrancelha - R$60,00">Corte + Barba + Sobrancelha - R$60,00</option>
+                            <option value="Pacote Completo - R$80,00">Pacote Completo - R$80,00</option>
+                        </select>
+                    </div>
+                    
+                    <!-- ========== CAMPO BARBEIRO ========== -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2" for="barbeiro">Barbeiro Preferido</label>
+                        <select id="barbeiro" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                            <option value="">Selecione um barbeiro</option>
+                            <!-- Alterado para ser mais claro que deve escolher um barbeiro -->
+                            <option value="Alex">Alex</option>
+                            <option value="Wanderlei">Wanderlei</option>
+                        </select>
+                    </div>
+                    
+                    <!-- ========== CAMPOS DATA E HORÁRIO (GRID) ========== -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <!-- 
+                    - grid responsivo: 1 coluna em mobile, 2 em desktop
+                    - gap-4: espaçamento entre os campos
+                    - mb-6: margem inferior maior para espaçar do botão
+                    -->
+                    
+                        <!-- Campo Data -->
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="data">Data</label>
+                            <input type="date" 
+                                   id="data" 
+                                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                                   required>
+                            <!-- 
+                            type="date": abre seletor de data nativo do navegador
+                            O atributo min será definido via JavaScript para impedir datas passadas
+                            -->
+                        </div>
+                        
+                        <!-- Campo Horário -->
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="horario">Horário</label>
+                            <select id="horario" 
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                                    required>
+                            <!-- 
+                            select: lista suspensa de opções
+                            Os horários são carregados dinamicamente via JavaScript baseado no barbeiro e data selecionados
+                            -->
+                            
+                                <option value="">Selecione</option>
+                                <!-- Horários serão adicionados dinamicamente pelo JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-gray-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                        Confirmar Agendamento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização -->
+    <section id="localizacao" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Localização</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Horário de Funcionamento</h3>
+                    <ul class="space-y-2">
+                        <li>Segunda a Sexta: 09:00 - 20:00</li>
+                        <li>Sábado: 09:00 - 18:30</li>
+                        <li>Domingo: 09:00 - 14:00</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-bold mt-8 mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li>Telefone: (61) 99809-9155</li>
+                        
+                        </ul>
+                    
+                    <!-- ========== LINKS DAS REDES SOCIAIS ========== -->
+                    <div class="mt-8 flex space-x-4">
+                        <!-- Link do Instagram -->
+                        <a href="https://www.instagram.com/wanderlei_barber29?igsh=ZTNmMDM0dXljY2pu" 
+                           target="_blank" 
+                           class="bg-gray-200 hover:bg-gray-300 p-3 rounded-full">
+                            <img src="instagram.png" alt="Instagram da Barbearia" class="w-6 h-6">
+                        </a>
+                        <!-- 
+                        TROQUE "SeuUsuario" pelo seu nome de usuário do Instagram
+                        Exemplo: https://instagram.com/wfbarbearia
+                        target="_blank": abre em nova aba
+                        -->
+                        
+                        <!-- Link do WhatsApp -->
+                        <a href="https://wa.me/5561998099155" 
+                           target="_blank" 
+                           class="bg-gray-200 hover:bg-gray-300 p-3 rounded-full">
+                            <img src="whatsapp.png" alt="WhatsApp da Barbearia" class="w-6 h-6">
+                        </a>
+                        <!-- 
+                        FORMATO DO WHATSAPP: https://wa.me/[código do país][DDD][número]
+                        Exemplo: https://wa.me/5561998099155
+                        - 55: código do Brasil
+                        - 61: DDD de Brasília
+                        - 998099155: número do WhatsApp
+                        -->
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Substituir pela URL do seu Google Maps -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245697.79084146835!2d-48.38637581328125!3d-15.802478500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd9ceac0dc45%3A0x453445d92aba13a1!2sWf%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1751948907130!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        class="rounded-lg shadow-md"
+                        title="Localização da Barbearia no Google Maps">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RODAPÉ DA PÁGINA ========== -->
+    <footer class="bg-gray-900 text-white py-8">
+    <!-- 
+    - footer: elemento semântico HTML5 para rodapé
+    - bg-gray-900: mesmo fundo escuro do header (consistência visual)
+    - text-white: texto branco
+    - py-8: padding vertical médio
+    -->
+    
+        <div class="container mx-auto px-4 text-center">
+        <!-- text-center: todo conteúdo centralizado -->
+        
+            <!-- Copyright -->
+            <p>© 2025 WF Barbearia. Todos os direitos reservados.</p>
+            
+            <!-- Créditos de desenvolvimento -->
+            <p class="mt-2 text-sm text-gray-400">Design e desenvolvimento por Brenda Sena</p>
+            <!-- 
+            - mt-2: margem superior pequena
+            - text-sm: texto menor
+            - text-gray-400: cinza mais claro (menos destaque)
+            -->
+            
+            <!-- Botão de administração (discreto) -->
+            <button id="adminBtn" class="mt-4 text-xs text-gray-600 hover:text-gray-400 transition-colors" onclick="menuAdmin()">
+                ⚙️
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // ========== INFORMAÇÕES IMPORTANTES DE SEGURANÇA ==========
+        // ⚠️ ATENÇÃO: Este é um site estático (HTML/CSS/JS apenas)
+        // A senha do administrador está ofuscada em Base64, mas ainda é visível
+        // no código fonte para quem souber inspecionar. Isso é uma limitação
+        // de hospedagens estáticas como GitHub Pages.
+        // 
+        // Para segurança REAL, seria necessário:
+        // - Backend com banco de dados
+        // - Autenticação com sessões seguras
+        // - Criptografia de senhas com hash + salt
+        // 
+        // A ofuscação atual serve apenas para dificultar acesso casual,
+        // não oferece proteção contra usuários técnicos.
+        
+        // ========== CONFIGURAÇÃO DO EMAILJS ==========
+        // ATENÇÃO: Você precisa configurar estas informações no site emailjs.com
+        // 1. Crie uma conta gratuita em: https://www.emailjs.com/
+        // 2. Configure um serviço de email (Gmail, Outlook, etc.)
+        // 3. Crie um template de email
+        // 4. Substitua os valores abaixo pelos seus dados reais
+        
+        const EMAILJS_CONFIG = {
+            serviceID: 'SEU_SERVICE_ID_AQUI',     // Ex: 'service_abc123'
+            templateID: 'SEU_TEMPLATE_ID_AQUI',   // Ex: 'template_xyz789'
+            publicKey: 'SUA_PUBLIC_KEY_AQUI'      // Ex: 'user_123abc456def'
+        };
+        
+        // Inicializa o EmailJS com sua chave pública
+        emailjs.init(EMAILJS_CONFIG.publicKey);
+
+        // ========== SEÇÃO 1: CONFIGURAÇÃO INICIAL DA PÁGINA ==========
+        // Esta seção executa quando a página carrega completamente
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========== CONFIGURAÇÃO DO CAMPO DE DATA ==========
+            // Define a data mínima como hoje para impedir agendamentos em datas passadas
+            
+            const hoje = new Date();                    // Pega a data atual
+            const dataFormatada = hoje.toISOString().split('T')[0];  // Converte para formato YYYY-MM-DD
+            document.getElementById('data').min = dataFormatada;     // Define data mínima no campo
+            
+            // EXPLICAÇÃO TÉCNICA:
+            // - new Date(): cria objeto com data/hora atual
+            // - toISOString(): converte para formato ISO (2025-01-08T14:30:00.000Z)
+            // - split('T')[0]: pega apenas a parte da data (2025-01-08)
+            // - .min: atributo HTML que define valor mínimo permitido
+            
+            // ========== CONFIGURAÇÃO DOS HORÁRIOS POR BARBEIRO ==========
+            // Adiciona eventos para atualizar horários quando barbeiro ou data mudar
+            document.getElementById('barbeiro').addEventListener('change', atualizarHorarios);
+            document.getElementById('data').addEventListener('change', atualizarHorarios);
+            
+            // Carrega horários iniciais
+            atualizarHorarios();
+        });
+
+        // ========== SISTEMA DE CONTROLE DE AGENDAMENTOS ==========
+        // Estas funções gerenciam os horários já ocupados usando localStorage
+        
+        function salvarAgendamento(data, horario, barbeiro, nomeCliente) {
+            // Recupera agendamentos existentes do localStorage
+            let agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            
+            // Cria o novo agendamento
+            const novoAgendamento = {
+                data: data,
+                horario: horario,
+                barbeiro: barbeiro,
+                cliente: nomeCliente,
+                timestamp: new Date().getTime() // Para possível limpeza futura
+            };
+            
+            // Adiciona à lista
+            agendamentos.push(novoAgendamento);
+            
+            // Salva de volta no localStorage
+            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentos));
+        }
+        
+        function verificarHorarioOcupado(data, horario, barbeiro) {
+            // Recupera agendamentos do localStorage
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            
+            // Verifica se existe agendamento para esta data, horário e barbeiro
+            return agendamentos.some(agendamento => 
+                agendamento.data === data && 
+                agendamento.horario === horario && 
+                agendamento.barbeiro === barbeiro
+            );
+        }
+        
+        function limparAgendamentosAntigos() {
+            // Remove agendamentos de mais de 30 dias (opcional)
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            const trintaDiasAtras = new Date().getTime() - (30 * 24 * 60 * 60 * 1000);
+            
+            const agendamentosLimpos = agendamentos.filter(agendamento => 
+                agendamento.timestamp > trintaDiasAtras
+            );
+            
+            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentosLimpos));
+        }
+        
+        function limparTodosAgendamentos() {
+            // Função administrativa para limpar todos os agendamentos
+            if (confirm('⚠️ ATENÇÃO!\n\nEsta ação irá remover TODOS os agendamentos salvos.\n\nDeseja realmente continuar?\n\n(Esta função é apenas para administradores)')) {
+                localStorage.removeItem('agendamentosWF');
+                alert('✅ Todos os agendamentos foram removidos com sucesso!');
+                atualizarHorarios(); // Atualiza a exibição dos horários
+            }
+        }
+        
+        function contarAgendamentos() {
+            // Função para contar total de agendamentos salvos
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            return agendamentos.length;
+        }
+        
+        function mostrarEstatisticas() {
+            // Função administrativa para mostrar estatísticas de agendamentos
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            const total = agendamentos.length;
+            
+            if (total === 0) {
+                alert('📊 ESTATÍSTICAS\n\nNenhum agendamento registrado no momento.');
+                return;
+            }
+            
+            // Conta agendamentos por barbeiro
+            const porBarbeiro = {};
+            agendamentos.forEach(agendamento => {
+                porBarbeiro[agendamento.barbeiro] = (porBarbeiro[agendamento.barbeiro] || 0) + 1;
+            });
+            
+            let mensagem = `📊 ESTATÍSTICAS DE AGENDAMENTOS\n\n`;
+            mensagem += `Total de agendamentos: ${total}\n\n`;
+            mensagem += `Por barbeiro:\n`;
+            
+            Object.keys(porBarbeiro).forEach(barbeiro => {
+                mensagem += `• ${barbeiro}: ${porBarbeiro[barbeiro]} agendamentos\n`;
+            });
+            
+            alert(mensagem);
+        }
+        
+        function menuAdmin() {
+            // ========== AUTENTICAÇÃO ADMINISTRATIVA ==========
+            // Solicita senha de administrador antes de acessar o menu
+            const senhaAdmin = prompt('🔐 ACESSO RESTRITO\n\nDigite a senha de administrador:');
+            
+            // ========== SENHA OFUSCADA PARA MAIOR SEGURANÇA ==========
+            // Senha codificada em Base64 para dificultar acesso casual
+            // 
+            // 🔐 COMO TROCAR A SENHA:
+            // 1. Acesse: https://www.base64encode.org/
+            // 2. Digite sua nova senha (ex: MinhaNovaSenh@123)
+            // 3. Copie o resultado Base64 (ex: TWluaGFOb3ZhU2VuaEAxMjM=)
+            // 4. Substitua o valor abaixo: 'V0ZCYXJiZXIyMDI1IQ==' por 'TWluaGFOb3ZhU2VuaEAxMjM='
+            // 5. Salve o arquivo
+            const senhaOfuscada = 'V0ZCYXJiZXIyMDI1IQ==';
+            const senhaCorreta = atob(senhaOfuscada); // Decodifica a senha
+            
+            // ⚠️ ATENÇÃO: Esta é uma proteção BÁSICA!
+            // Em ambientes estáticos (GitHub Pages), a senha sempre ficará visível
+            // para quem souber inspecionar o código. Para segurança real,
+            // seria necessário um backend com autenticação adequada.
+            
+            // Verifica se a senha está correta
+            if (senhaAdmin !== senhaCorreta) {
+                if (senhaAdmin !== null) { // Se não cancelou
+                    alert('❌ Senha incorreta!\n\nAcesso negado. Esta área é restrita aos administradores.');
+                }
+                return; // Sai da função sem mostrar o menu
+            }
+            
+            // Se chegou até aqui, a senha está correta
+            alert('✅ Acesso autorizado!\n\nBem-vindo ao painel administrativo, proprietário.');
+            
+            // Menu administrativo com opções
+            const opcao = prompt(`🔧 MENU ADMINISTRATIVO\n\nEscolha uma opção:\n\n1 - Ver estatísticas de agendamentos\n2 - Limpar agendamentos antigos (30+ dias)\n3 - LIMPAR TODOS os agendamentos\n4 - Criar agendamentos de teste\n5 - Remover agendamento específico\n6 - Alterar senha de administrador\n7 - Cancelar\n\nDigite o número da opção:`);
+            
+            switch(opcao) {
+                case '1':
+                    mostrarEstatisticas();
+                    break;
+                case '2':
+                    const antes = contarAgendamentos();
+                    limparAgendamentosAntigos();
+                    const depois = contarAgendamentos();
+                    const removidos = antes - depois;
+                    alert(`🧹 Limpeza concluída!\n\nAgendamentos removidos: ${removidos}\nAgendamentos restantes: ${depois}`);
+                    atualizarHorarios();
+                    break;
+                case '3':
+                    limparTodosAgendamentos();
+                    break;
+                case '4':
+                    criarAgendamentosTeste();
+                    break;
+                case '5':
+                    removerAgendamentoEspecifico();
+                    break;
+                case '6':
+                    alterarSenhaAdmin();
+                    break;
+                case '7':
+                case null:
+                    // Cancelar
+                    break;
+                default:
+                    alert('❌ Opção inválida! Tente novamente.');
+            }
+        }
+        
+        function criarAgendamentosTeste() {
+            // Função para criar agendamentos de teste para demonstração
+            if (!confirm('🧪 CRIAR AGENDAMENTOS DE TESTE\n\nEsta função irá criar alguns agendamentos de exemplo com datas antigas e recentes para você testar o sistema.\n\nDeseja continuar?')) {
+                return;
+            }
+            
+            const hoje = new Date();
+            const agendamentosTeste = [];
+            
+            // Agendamentos antigos (mais de 30 dias)
+            const data45DiasAtras = new Date(hoje.getTime() - (45 * 24 * 60 * 60 * 1000));
+            agendamentosTeste.push({
+                data: data45DiasAtras.toISOString().split('T')[0],
+                horario: '09:00',
+                barbeiro: 'Alex',
+                cliente: 'João Silva (TESTE - 45 dias atrás)',
+                timestamp: data45DiasAtras.getTime()
+            });
+            
+            const data35DiasAtras = new Date(hoje.getTime() - (35 * 24 * 60 * 60 * 1000));
+            agendamentosTeste.push({
+                data: data35DiasAtras.toISOString().split('T')[0],
+                horario: '14:00',
+                barbeiro: 'Wanderlei',
+                cliente: 'Pedro Santos (TESTE - 35 dias atrás)',
+                timestamp: data35DiasAtras.getTime()
+            });
+            
+            // Agendamentos recentes (menos de 30 dias)
+            const data20DiasAtras = new Date(hoje.getTime() - (20 * 24 * 60 * 60 * 1000));
+            agendamentosTeste.push({
+                data: data20DiasAtras.toISOString().split('T')[0],
+                horario: '10:30',
+                barbeiro: 'Alex',
+                cliente: 'Maria Oliveira (TESTE - 20 dias atrás)',
+                timestamp: data20DiasAtras.getTime()
+            });
+            
+            const data10DiasAtras = new Date(hoje.getTime() - (10 * 24 * 60 * 60 * 1000));
+            agendamentosTeste.push({
+                data: data10DiasAtras.toISOString().split('T')[0],
+                horario: '16:00',
+                barbeiro: 'Wanderlei',
+                cliente: 'Carlos Costa (TESTE - 10 dias atrás)',
+                timestamp: data10DiasAtras.getTime()
+            });
+            
+            // Agendamentos para hoje e futuro
+            agendamentosTeste.push({
+                data: hoje.toISOString().split('T')[0],
+                horario: '11:00',
+                barbeiro: 'Alex',
+                cliente: 'Ana Lima (TESTE - hoje)',
+                timestamp: hoje.getTime()
+            });
+            
+            const amanha = new Date(hoje.getTime() + (1 * 24 * 60 * 60 * 1000));
+            agendamentosTeste.push({
+                data: amanha.toISOString().split('T')[0],
+                horario: '15:30',
+                barbeiro: 'Wanderlei',
+                cliente: 'Roberto Ferreira (TESTE - amanhã)',
+                timestamp: amanha.getTime()
+            });
+            
+            // Salva os agendamentos de teste
+            let agendamentosExistentes = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            agendamentosExistentes = agendamentosExistentes.concat(agendamentosTeste);
+            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentosExistentes));
+            
+            alert(`✅ Agendamentos de teste criados com sucesso!\n\nForam adicionados:\n• 2 agendamentos ANTIGOS (35-45 dias atrás)\n• 2 agendamentos RECENTES (10-20 dias atrás)\n• 2 agendamentos ATUAIS (hoje e amanhã)\n\nTotal: 6 agendamentos de teste\n\nAgora você pode:\n1. Ver estatísticas (opção 1)\n2. Testar limpeza de antigos (opção 2)\n3. Ver como os horários aparecem ocupados no formulário`);
+            
+            // Atualiza a exibição
+            atualizarHorarios();
+        }
+        
+        function alterarSenhaAdmin() {
+            // Função para alterar a senha de administrador
+            alert('🔐 ALTERAÇÃO DE SENHA\n\nPor segurança, a alteração da senha deve ser feita diretamente no código.\n\nInstruções:\n1. Abra o arquivo index.html em um editor\n2. Procure por "const senhaOfuscada = \'V0ZCYXJiZXIyMDI1IQ==\'"\n3. Substitua o valor entre aspas pela sua nova senha codificada em Base64\n4. Para codificar sua nova senha: acesse https://www.base64encode.org/\n5. Salve o arquivo\n\nExemplo:\n- Senha: MinhaNovaSenh@123\n- Base64: TWluaGFOb3ZhU2VuaEAxMjM=\n- Código: const senhaOfuscada = \'TWluaGFOb3ZhU2VuaEAxMjM=\';\n\nRecomendação: Use uma senha forte com letras, números e símbolos.');
+        }
+        
+        function verificarSenhaAdmin() {
+            // Função auxiliar para verificar se a senha padrão ainda está sendo usada
+            const senhaOfuscadaPadrao = 'QjEyMTIwNXMhCg=='; // Senha padrão: WFBarber2025!
+            const senhaOfuscadaAtual = 'QjEyMTIwNXMhCg==' // Mesma variável da função menuAdmin
+            
+            // Avisa se ainda está usando a senha padrão
+            if (senhaOfuscadaAtual === senhaOfuscadaPadrao) {
+                console.warn('⚠️ AVISO DE SEGURANÇA: Você ainda está usando a senha padrão do administrador!\n\nPara maior segurança, altere a senha antes de hospedar o site.\n\nInstruções:\n1. Acesse: https://www.base64encode.org/\n2. Digite sua nova senha\n3. Copie o código Base64 gerado\n4. Substitua o valor de "senhaOfuscada" no código\n\nSenha padrão atual: WFBarber2025!');
+            }
+        }
+        
+        function removerAgendamentoEspecifico() {
+            // Função para listar e remover um agendamento específico
+            const agendamentos = JSON.parse(localStorage.getItem('agendamentosWF') || '[]');
+            
+            if (agendamentos.length === 0) {
+                alert('📋 Nenhum agendamento encontrado!\n\nNão há agendamentos salvos no momento.');
+                return;
+            }
+            
+            // Organiza agendamentos por data (mais recentes primeiro)
+            agendamentos.sort((a, b) => {
+                const dataA = new Date(a.data + 'T' + a.horario);
+                const dataB = new Date(b.data + 'T' + b.horario);
+                return dataB - dataA;
+            });
+            
+            // Cria lista formatada para exibição
+            let listaAgendamentos = '📋 AGENDAMENTOS SALVOS\n\nEscolha qual deseja REMOVER:\n\n';
+            agendamentos.forEach((agendamento, index) => {
+                const dataFormatada = formatarDataBrasileira(agendamento.data);
+                const agendamentoAntigoDias = calcularDiasAtras(agendamento.data);
+                const status = agendamentoAntigoDias > 30 ? ' (ANTIGO)' : agendamentoAntigoDias > 0 ? ' (PASSADO)' : ' (FUTURO)';
+                
+                listaAgendamentos += `${index + 1} - ${dataFormatada} às ${agendamento.horario}\n`;
+                listaAgendamentos += `     Barbeiro: ${agendamento.barbeiro}\n`;
+                listaAgendamentos += `     Cliente: ${agendamento.cliente}${status}\n\n`;
+            });
+            
+            listaAgendamentos += `0 - Cancelar operação\n\nDigite o número do agendamento que deseja REMOVER:`;
+            
+            const escolha = prompt(listaAgendamentos);
+            
+            if (escolha === null || escolha === '0') {
+                return; // Cancelou
+            }
+            
+            const indice = parseInt(escolha) - 1;
+            
+            if (isNaN(indice) || indice < 0 || indice >= agendamentos.length) {
+                alert('❌ Opção inválida!\n\nPor favor, digite um número válido da lista.');
+                return;
+            }
+            
+            const agendamentoSelecionado = agendamentos[indice];
+            const dataFormatada = formatarDataBrasileira(agendamentoSelecionado.data);
+            
+            // Confirmação de remoção
+            const confirmacao = confirm(`⚠️ CONFIRMAR REMOÇÃO\n\nDeseja realmente REMOVER este agendamento?\n\n📅 Data: ${dataFormatada}\n🕐 Horário: ${agendamentoSelecionado.horario}\n✂️ Barbeiro: ${agendamentoSelecionado.barbeiro}\n👤 Cliente: ${agendamentoSelecionado.cliente}\n\n⚠️ Esta ação NÃO pode ser desfeita!`);
+            
+            if (!confirmacao) {
+                return; // Cancelou a remoção
+            }
+            
+            // Remove o agendamento específico
+            agendamentos.splice(indice, 1);
+            localStorage.setItem('agendamentosWF', JSON.stringify(agendamentos));
+            
+            alert(`✅ Agendamento removido com sucesso!\n\n📅 ${dataFormatada} às ${agendamentoSelecionado.horario}\n✂️ ${agendamentoSelecionado.barbeiro}\n👤 ${agendamentoSelecionado.cliente}\n\nO horário agora está disponível novamente.`);
+            
+            // Atualiza a exibição dos horários
+            atualizarHorarios();
+        }
+        
+        function formatarDataBrasileira(dataISO) {
+            // Converte data do formato YYYY-MM-DD para DD/MM/YYYY
+            const partes = dataISO.split('-');
+            return `${partes[2]}/${partes[1]}/${partes[0]}`;
+        }
+        
+        function calcularDiasAtras(dataAgendamento) {
+            // Calcula quantos dias atrás foi o agendamento
+            const hoje = new Date();
+            const dataAgend = new Date(dataAgendamento + 'T00:00:00');
+            const diferencaMs = hoje - dataAgend;
+            return Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+        }
+
+        // ========== FUNÇÃO PARA DEFINIR HORÁRIOS POR BARBEIRO ==========
+        function atualizarHorarios() {
+            const barbeiroSelecionado = document.getElementById('barbeiro').value;
+            const dataSelecionada = document.getElementById('data').value;
+            const selectHorario = document.getElementById('horario');
+            
+            // Limpa opções existentes
+            selectHorario.innerHTML = '<option value="">Selecione</option>';
+            
+            // Se não há data selecionada, exige seleção da data primeiro
+            if (!dataSelecionada) {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = "Selecione uma data primeiro";
+                option.disabled = true;
+                selectHorario.appendChild(option);
+                return;
+            }
+            
+            // Pega o dia da semana da data selecionada (0=domingo, 1=segunda, ..., 6=sábado)
+            const dataSelecionadaObj = new Date(dataSelecionada + 'T00:00:00');
+            const diaSemana = dataSelecionadaObj.getDay();
+            
+            let horariosDisponiveis = [];
+            
+            // Se não escolheu barbeiro específico, não mostra horários
+            if (!barbeiroSelecionado) {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = "Selecione um barbeiro primeiro";
+                option.disabled = true;
+                selectHorario.appendChild(option);
+                return;
+            }
+            // ========== HORÁRIOS DO ALEX ==========
+            else if (barbeiroSelecionado === 'Alex') {
+                if (diaSemana === 0) {
+                    // Domingo: Alex folga
+                    const option = document.createElement('option');
+                    option.value = "";
+                    option.textContent = "Alex não trabalha aos domingos";
+                    option.disabled = true;
+                    selectHorario.appendChild(option);
+                    return;
+                } else if (diaSemana >= 1 && diaSemana <= 5) {
+                    // Segunda a Sexta: 09:00-13:00 e 15:00-20:00
+                    horariosDisponiveis = [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", 
+                        "12:00", "12:30", "13:00",
+                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", 
+                        "18:00", "18:30", "19:00", "19:30"
+                    ];
+                } else if (diaSemana === 6) {
+                    // Sábado: 09:00-13:00 e 15:00-18:30
+                    horariosDisponiveis = [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", 
+                        "12:00", "12:30", "13:00",
+                        "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", 
+                        "18:00", "18:30"
+                    ];
+                }
+            }
+            // ========== HORÁRIOS DO WANDERLEI ==========
+            else if (barbeiroSelecionado === 'Wanderlei') {
+                if (diaSemana === 1) {
+                    // Segunda: Wanderlei folga
+                    const option = document.createElement('option');
+                    option.value = "";
+                    option.textContent = "Wanderlei não trabalha às segundas";
+                    option.disabled = true;
+                    selectHorario.appendChild(option);
+                    return;
+                } else if (diaSemana >= 2 && diaSemana <= 5) {
+                    // Terça a Sexta: 09:00-11:30 e 13:30-20:00
+                    horariosDisponiveis = [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", 
+                        "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30"
+                    ];
+                } else if (diaSemana === 6) {
+                    // Sábado: 09:00-11:30 e 13:30-18:30
+                    horariosDisponiveis = [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", 
+                        "16:30", "17:00", "17:30", "18:00", "18:30"
+                    ];
+                } else if (diaSemana === 0) {
+                    // Domingo: 09:00-14:00 (direto, sem almoço)
+                    horariosDisponiveis = [
+                        "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
+                        "12:00", "12:30", "13:00", "13:30", "14:00"
+                    ];
+                }
+            }
+            
+            // Adiciona os horários disponíveis ao select, verificando se estão ocupados
+            if (horariosDisponiveis.length > 0) {
+                let horariosLivres = 0; // Contador de horários livres
+                
+                horariosDisponiveis.forEach(horario => {
+                    const option = document.createElement('option');
+                    option.value = horario;
+                    
+                    // Verifica se o horário já está ocupado para este barbeiro e data
+                    const horarioOcupado = verificarHorarioOcupado(dataSelecionada, horario, barbeiroSelecionado);
+                    
+                    if (horarioOcupado) {
+                        // Se o horário está ocupado, marca como indisponível
+                        option.textContent = `${horario} - OCUPADO`;
+                        option.disabled = true;
+                        option.style.color = '#999'; // Cor cinza para indicar indisponibilidade
+                        option.style.fontStyle = 'italic'; // Itálico para destacar
+                    } else {
+                        // Se o horário está livre, mostra normalmente
+                        option.textContent = horario;
+                        horariosLivres++; // Incrementa contador de horários livres
+                    }
+                    
+                    selectHorario.appendChild(option);
+                });
+                
+                // Se não há horários livres, adiciona uma mensagem informativa
+                if (horariosLivres === 0) {
+                    const optionInfo = document.createElement('option');
+                    optionInfo.value = "";
+                    optionInfo.textContent = "❌ Todos os horários estão ocupados neste dia";
+                    optionInfo.disabled = true;
+                    optionInfo.style.color = '#d32f2f';
+                    optionInfo.style.fontWeight = 'bold';
+                    selectHorario.appendChild(optionInfo);
+                }
+            } else {
+                const option = document.createElement('option');
+                option.value = "";
+                option.textContent = "Nenhum horário disponível";
+                option.disabled = true;
+                selectHorario.appendChild(option);
+            }
+        }
+
+        // ========== SEÇÃO 2: MENU MOBILE ==========
+        // Esta seção controla o menu que aparece em telas pequenas (celulares)
+        
+        // Busca o botão do menu pelo ID 'menuBtn' e adiciona um evento de clique
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            // Quando o botão é clicado, busca o elemento do menu mobile pelo ID
+            const menu = document.getElementById('mobileMenu');
+            // Alterna a classe 'hidden' - se estiver escondido, mostra; se estiver visível, esconde
+            menu.classList.toggle('hidden');
+        });
+
+        // ========== SEÇÃO 3: PREENCHIMENTO AUTOMÁTICO DE SERVIÇO ==========
+        // Esta função é chamada quando clicamos no botão "Agendar" de um serviço específico
+        
+        function prefillService(servico) {
+            // Busca o elemento select (lista suspensa) de serviços pelo ID
+            const servicoSelect = document.getElementById('servico');
+            
+            // Loop que percorre todas as opções disponíveis no select
+            for (let i = 0; i < servicoSelect.options.length; i++) {
+                // Verifica se o texto da opção atual começa com o nome do serviço clicado
+                if (servicoSelect.options[i].text.startsWith(servico)) {
+                    // Se encontrar, seleciona esta opção automaticamente
+                    servicoSelect.selectedIndex = i;
+                    // Para o loop pois já encontrou o que precisava
+                    break;
+                }
+            }
+            
+            // Atualiza os horários após selecionar o serviço
+            atualizarHorarios();
+            
+            // Rola a página suavemente até a seção de agendamento
+            document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ========== SEÇÃO 4: ENVIO DO FORMULÁRIO PARA WHATSAPP ==========
+        // Esta função é executada quando o formulário de agendamento é enviado
+        
+        function submitForm(event) {
+            // Impede o comportamento padrão do formulário (recarregar a página)
+            event.preventDefault();
+            
+            // ========== VALIDAÇÃO DE FOLGAS ==========
+            // Verifica se o barbeiro está disponível na data selecionada
+            const dataValidacao = document.getElementById('data').value;
+            const barbeiroValidacao = document.getElementById('barbeiro').value;
+            const horarioValidacao = document.getElementById('horario').value;
+            
+            if (dataValidacao && barbeiroValidacao) {
+                const dataSelecionadaObj = new Date(dataValidacao + 'T00:00:00');
+                const diaSemana = dataSelecionadaObj.getDay();
+                
+                // Validação para Alex (folga no domingo)
+                if (barbeiroValidacao === 'Alex' && diaSemana === 0) {
+                    alert('Alex não trabalha aos domingos. Por favor, escolha outro dia ou barbeiro.');
+                    return;
+                }
+                
+                // Validação para Wanderlei (folga na segunda)
+                if (barbeiroValidacao === 'Wanderlei' && diaSemana === 1) {
+                    alert('Wanderlei não trabalha às segundas-feiras. Por favor, escolha outro dia ou barbeiro.');
+                    return;
+                }
+            }
+            
+            // Validação adicional: verifica se há horário selecionado
+            if (!horarioValidacao) {
+                alert('Por favor, selecione um horário válido.');
+                return;
+            }
+            
+            // *** NÚMERO DO WHATSAPP DA WF BARBEARIA ***
+            const ownerPhone = '5561998651796'; // WhatsApp da WF Barbearia: (61) 99865-1796
+            
+            // ========== COLETA DOS DADOS DO FORMULÁRIO ==========
+            // Busca cada campo do formulário pelo ID e pega o valor digitado
+            const nome = document.getElementById('nome').value;           // Nome do cliente
+            const telefone = document.getElementById('telefone').value;   // Telefone do cliente
+            const data = document.getElementById('data').value;           // Data escolhida
+            const horario = document.getElementById('horario').value;     // Horário escolhido
+            const servico = document.getElementById('servico').value;     // Serviço selecionado
+            const barbeiro = document.getElementById('barbeiro').value;   // Barbeiro preferido (opcional)
+            
+            // ========== VERIFICAÇÃO FINAL DE HORÁRIO OCUPADO ==========
+            // Última verificação antes de salvar (evita conflitos)
+            if (verificarHorarioOcupado(data, horario, barbeiro)) {
+                alert('❌ Este horário acabou de ser ocupado por outro cliente. Por favor, escolha outro horário.');
+                atualizarHorarios(); // Atualiza a lista de horários
+                return;
+            }
+            
+            // ========== SALVAR AGENDAMENTO ==========
+            // Salva o agendamento no localStorage antes de enviar para WhatsApp
+            salvarAgendamento(data, horario, barbeiro, nome);
+            
+            // ========== FORMATAÇÃO DA MENSAGEM ==========
+            // Cria uma mensagem formatada e atrativa que será enviada pelo WhatsApp
+            const mensagem = `� *NOVO AGENDAMENTO WF BARBEARIA* �\n\n` +
+                             `👤 *Cliente:* ${nome}\n` +
+                             `📱 *Telefone:* ${telefone}\n` +
+                             `📅 *Data:* ${formatDate(data)}\n` +
+                             `⏰ *Horário:* ${horario}\n` +
+                             `✂️ *Serviço:* ${servico}\n` +
+                             `💈 *Barbeiro:* ${barbeiro || 'Qualquer um de nossa equipe'}\n\n` +
+                             `🎯 *CONFIRME O HORÁRIO DISPONÍVEL*\n\n` +
+                             `📋 *INFORMAÇÕES IMPORTANTES:*\n` +
+                             `• Chegue 5 minutos antes do horário\n` +
+                             `• Traga documento com foto\n` +
+                             `• Aceitamos: Dinheiro, PIX e Cartão\n\n` +
+                             `🔄 *PRECISA ALTERAR?*\n` +
+                             `• Para *cancelar* ou *remarcar*: Avise com pelo menos 2 horas de antecedência\n` +
+                             `• Para *mudar o serviço*: Informe até 1 hora antes\n` +
+                             `• Para *trocar de barbeiro*: Consulte disponibilidade\n\n` +
+                             `💡 *Alterações de última hora podem gerar taxa adicional*\n\n` +
+                             `🌟 Obrigado por escolher a WF Barbearia!\n` +
+                             `📍 Seu estilo é nossa missão! 💈✨\n\n` +
+                             `🌐 *Site:* ${window.location.origin}\n` +
+                             `📸 *Instagram:* @wanderlei_barber29`;
+            
+            // ========== ABERTURA DO WHATSAPP ==========
+            // Cria o link do WhatsApp e abre em nova aba
+            const linkWhatsApp = `https://wa.me/${ownerPhone}?text=${encodeURIComponent(mensagem)}`;
+            
+            // Tenta abrir o WhatsApp de diferentes formas para garantir compatibilidade
+            if (window.navigator.userAgent.includes('Mobile')) {
+                // Em dispositivos móveis, abre diretamente o app do WhatsApp
+                window.location.href = linkWhatsApp;
+            } else {
+                // Em desktop, abre em nova aba
+                const novaAba = window.open(linkWhatsApp, '_blank');
+                
+                // Se não conseguir abrir nova aba (bloqueador de popup), 
+                // redireciona na mesma aba
+                if (!novaAba || novaAba.closed || typeof novaAba.closed == 'undefined') {
+                    window.location.href = linkWhatsApp;
+                }
+            }
+            
+            // ========== MENSAGEM DE CONFIRMAÇÃO ==========
+            // Mostra uma mensagem de sucesso personalizada e profissional para o usuário
+            const mensagemConfirmacao = `🎉 AGENDAMENTO REALIZADO COM SUCESSO! 🎉\n\n` +
+                                      `Olá, ${nome}! Seja bem-vindo(a) à WF Barbearia! 👋\n\n` +
+                                      `📋 RESUMO DO SEU AGENDAMENTO:\n` +
+                                      `📅 Data: ${formatDate(data)}\n` +
+                                      `⏰ Horário: ${horario}\n` +
+                                      `💺 Barbeiro: ${barbeiro || 'Qualquer um de nossa equipe'}\n` +
+                                      `✂️ Serviço: ${servico.split(' - ')[0]}\n\n` +
+                                      `📱 PRÓXIMOS PASSOS:\n` +
+                                      `1️⃣ Você será redirecionado para nosso WhatsApp\n` +
+                                      `2️⃣ Aguarde nossa confirmação em alguns minutos\n` +
+                                      `3️⃣ Chegue 5 minutos antes do horário marcado\n\n` +
+                                      `💡 INFORMAÇÕES IMPORTANTES:\n` +
+                                      `• Traga um documento com foto (RG ou CNH)\n` +
+                                      `• Aceitamos: Dinheiro, PIX e Cartão\n` +
+                                      `• Em caso de imprevisto, nos avise com antecedência\n` +
+                                      `• Siga-nos no Instagram @wanderlei_barber29\n\n` +
+                                      `✨ Obrigado por escolher a WF Barbearia!\n` +
+                                      `Estamos ansiosos para cuidar do seu visual! �\n\n` +
+                                      `Equipe WF Barbearia - Excelência em cuidados masculinos`;
+            
+            alert(mensagemConfirmacao);
+            
+            // ========== LIMPEZA DO FORMULÁRIO ==========
+            // Limpa todos os campos do formulário após enviar
+            document.getElementById('agendamentoForm').reset();
+            
+            // Redefine a data mínima após reset
+            const hoje = new Date();
+            const dataFormatada = hoje.toISOString().split('T')[0];
+            document.getElementById('data').min = dataFormatada;
+            
+            // Atualiza os horários após reset
+            atualizarHorarios();
+        }
+
+        // ========== SEÇÃO 5: FORMATADOR DE DATA ==========
+        // Função que converte a data do formato americano (yyyy-mm-dd) para brasileiro (dd/mm/yyyy)
+        
+        function formatDate(dateString) {
+            // Cria um objeto Date a partir da string de data
+            const date = new Date(dateString);
+            // Converte para formato brasileiro (dd/mm/yyyy)
+            return date.toLocaleDateString('pt-BR');
+        }
+        
+        // ========== INICIALIZAÇÃO AUTOMÁTICA DA PÁGINA ==========
+        // Executa quando a página termina de carregar
+        window.onload = function() {
+            // Limpa agendamentos antigos automaticamente
+            limparAgendamentosAntigos();
+            
+            // Configura a data mínima como hoje
+            const hoje = new Date();
+            const dataFormatada = hoje.toISOString().split('T')[0];
+            document.getElementById('data').min = dataFormatada;
+            
+            // Inicializa os horários
+            atualizarHorarios();
+            
+            // Verifica se ainda está usando a senha padrão (aviso no console)
+            verificarSenhaAdmin();
+            
+            // ========== AVISO DE SEGURANÇA NO CONSOLE ==========
+            console.log('🔐 WF BARBEARIA - Sistema de Agendamento');
+            console.log('⚠️ LEMBRETE: Se você é o proprietário, lembre-se de trocar a senha do administrador!');
+            console.log('📖 Instruções: Procure por "COMO TROCAR A SENHA" no código ou acesse o menu admin > Alterar Senha');
+            console.log('🌐 Para hospedagem no GitHub Pages, a senha ficará sempre visível no código (limitação de site estático)');
+        };
+    </script>
+</body>
+</html>

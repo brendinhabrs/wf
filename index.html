@@ -1464,27 +1464,23 @@
             
             // ========== FORMATAÇÃO DA MENSAGEM ==========
             // Cria uma mensagem formatada e atrativa que será enviada pelo WhatsApp
-            const mensagem = `� *NOVO AGENDAMENTO WF BARBEARIA* �\n\n` +
-                             `👤 *Cliente:* ${nome}\n` +
-                             `📱 *Telefone:* ${telefone}\n` +
-                             `📅 *Data:* ${formatDate(data)}\n` +
-                             `⏰ *Horário:* ${horario}\n` +
-                             `✂️ *Serviço:* ${servico}\n` +
-                             `💈 *Barbeiro:* ${barbeiro || 'Qualquer um de nossa equipe'}\n\n` +
-                             `🎯 *CONFIRME O HORÁRIO DISPONÍVEL*\n\n` +
-                             `📋 *INFORMAÇÕES IMPORTANTES:*\n` +
-                             `• Chegue 5 minutos antes do horário\n` +
-                             `• Traga documento com foto\n` +
-                             `• Aceitamos: Dinheiro, PIX e Cartão\n\n` +
-                             `🔄 *PRECISA ALTERAR?*\n` +
-                             `• Para *cancelar* ou *remarcar*: Avise com pelo menos 2 horas de antecedência\n` +
-                             `• Para *mudar o serviço*: Informe até 1 hora antes\n` +
-                             `• Para *trocar de barbeiro*: Consulte disponibilidade\n\n` +
-                             `💡 *Alterações de última hora podem gerar taxa adicional*\n\n` +
-                             `🌟 Obrigado por escolher a WF Barbearia!\n` +
-                             `📍 Seu estilo é nossa missão! 💈✨\n\n` +
-                             `🌐 *Site:* ${window.location.origin}\n` +
-                             `📸 *Instagram:* @wanderlei_barber29`;
+            const mensagem = `🚀 NOVO AGENDAMENTO WF BARBEARIA 🚀\n\n` +
+                 `👤 Cliente: ${nome}\n` +
+                 `📱 Telefone: ${telefone}\n` +
+                 `📅 Data: ${formatDate(data)}\n` +
+                 `⏰ Horário: ${horario}\n` +
+                 `✂️ Serviço: ${servico}\n` +
+                 `💈 Barbeiro: ${barbeiro || 'Qualquer um de nossa equipe'}\n\n` +
+                 `🎯 CONFIRME O HORÁRIO DISPONÍVEL\n\n` +
+                 `📋 INFORMAÇÕES IMPORTANTES:\n` +
+                 `• Aceitamos: Dinheiro, PIX e Cartão\n\n` +
+                 `🔄 PRECISA ALTERAR?\n` +
+                 `• Para cancelar ou remarcar: Avise com pelo menos 2 horas de antecedência\n` +
+                 `💡 Alterações de última hora podem gerar taxa adicional\n\n` +
+                 `🌟 Obrigado por escolher a WF Barbearia!\n` +
+                 `📍 Seu estilo é nossa missão! 💈✨\n\n` +
+                 `🌐 Site: https://brendinhabrs.github.io/wf/\n` +
+                 `📸 Instagram: @wanderlei_barber29`;
             
             // ========== ABERTURA DO WHATSAPP ==========
             // Cria o link do WhatsApp e abre em nova aba
